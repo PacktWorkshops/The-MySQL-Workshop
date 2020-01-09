@@ -1,0 +1,10 @@
+USE test;
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (user varchar(255) primary key, has_logged_in int not null);
+INSERT INTO users VALUES ('jdoe', 0), ('monty', 0), ('sakila', 0);
+UPDATE users u JOIN logincount l on u.user=l.user SET u.has_logged_in=TRUE WHERE l.logins>0;
+SELECT * FROM users;
+user	has_logged_in
+jdoe	1
+monty	0
+sakila	0
