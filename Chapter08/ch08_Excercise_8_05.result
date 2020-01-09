@@ -1,0 +1,20 @@
+USE test;
+DROP TABLE IF EXISTS furniture;
+CREATE TABLE furniture (
+id INT PRIMARY KEY,
+description VARCHAR(255),
+room VARCHAR(255)
+);
+INSERT INTO furniture VALUES
+(1, 'couch', 'living room'),
+(2, 'bed', 'bedroom'),
+(3, 'small table', 'kitchen');
+INSERT INTO furniture VALUES
+(4, 'bed', 'second bedroom'),
+(1, 'table', 'second bedroom');
+ERROR 23000: Duplicate entry '1' for key 'PRIMARY'
+SELECT * FROM furniture;
+id	description	room
+1	couch	living room
+2	bed	bedroom
+3	small table	kitchen

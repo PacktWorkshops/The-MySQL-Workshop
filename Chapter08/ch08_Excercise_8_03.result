@@ -1,0 +1,14 @@
+USE test;
+DESCRIBE animals;
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	
+name	varchar(255)	YES		NULL	
+TRUNCATE TABLE animals;
+BEGIN;
+INSERT INTO animals VALUES(1, 'dolphin');
+SELECT * FROM animals;
+id	name
+1	dolphin
+ROLLBACK;
+SELECT * FROM animals;
+id	name

@@ -1,0 +1,43 @@
+USE world;
+SELECT * FROM city_export WHERE District='Moskova';
+ID	Name	CountryCode	District	Population
+3673	Podolsk	RUS	Moskova	194300
+3687	Ljubertsy	RUS	Moskova	163900
+3693	Mytištši	RUS	Moskova	155700
+3694	Kolomna	RUS	Moskova	150700
+3695	Elektrostal	RUS	Moskova	147000
+3703	Himki	RUS	Moskova	133700
+3704	Balašiha	RUS	Moskova	132900
+3707	Korolev	RUS	Moskova	132400
+3708	Serpuhov	RUS	Moskova	132000
+3709	Odintsovo	RUS	Moskova	127400
+3710	Orehovo-Zujevo	RUS	Moskova	124900
+3720	Noginsk	RUS	Moskova	117200
+3726	Sergijev Posad	RUS	Moskova	111100
+3736	Štšolkovo	RUS	Moskova	104900
+3745	Zeleznodoroznyi	RUS	Moskova	100100
+3756	Zukovski	RUS	Moskova	96500
+3765	Krasnogorsk	RUS	Moskova	91000
+3766	Klin	RUS	Moskova	90000
+FLUSH TABLE city_export;
+SELECT * FROM city_export WHERE District='Moskova';
+ID	Name	CountryCode	District	Population
+3673	Podolsk	RUS	Moskova	194300
+3687	Ljubertsy	RUS	Moskova	163900
+3693	Mytištši	RUS	Moskova	155700
+3694	Kolomna	RUS	Moskova	150700
+3695	Elektrostal	RUS	Moskova	147000
+3703	Himki	RUS	Moskova	133700
+3704	Balašiha	RUS	Moskova	132900
+3707	Korolev	RUS	Moskova	132400
+3708	Serpuhov	RUS	Moskova	132000
+3709	Odintsovo	RUS	Moskova	127400
+3710	Orehovo-Zujevo	RUS	Moskova	124900
+3720	Noginsk	RUS	Moskova	117200
+3726	Sergijev Posad	RUS	Moskova	111100
+3736	Štšolkovo	RUS	Moskova	104900
+3745	Zeleznodoroznyi	RUS	Moskova	100100
+3756	Zukovski	RUS	Moskova	96500
+3765	Krasnogorsk	RUS	Moskova	91000
+3766	Klin	RUS	Moskova	90000
+DROP TABLE IF EXISTS city_export;

@@ -1,0 +1,15 @@
+USE test;
+DROP TABLE IF EXISTS mytable;
+CREATE TABLE mytable (
+id int primary key,
+c1 varchar(10),
+c2 varchar(10),
+c3 varchar(10)
+);
+BEGIN;
+INSERT INTO mytable VALUES (1, 'foo', 'bar', 'baz');
+SELECT * FROM mytable;
+id	c1	c2	c3
+1	foo	bar	baz
+COMMIT;
+TRUNCATE mytable;

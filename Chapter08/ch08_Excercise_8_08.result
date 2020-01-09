@@ -1,0 +1,13 @@
+SHOW TABLES FROM world;
+Tables_in_world
+airports
+city
+country
+countrylanguage
+DESCRIBE world.city;
+Field	Type	Null	Key	Default	Extra
+ID	int(11)	NO	PRI	NULL	auto_increment
+Name	char(35)	NO			
+CountryCode	char(3)	NO	MUL		
+District	char(20)	NO			
+Population	int(11)	NO		0	

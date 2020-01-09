@@ -1,0 +1,12 @@
+USE test;
+DESCRIBE animals;
+Field	Type	Null	Key	Default	Extra
+id	int(11)	NO	PRI	NULL	
+name	varchar(255)	YES		NULL	
+INSERT INTO animals (name, id) VALUES('Camel', 2);
+INSERT INTO animals (id) VALUES(3);
+SELECT * FROM animals;
+id	name
+1	dog
+2	Camel
+3	NULL
