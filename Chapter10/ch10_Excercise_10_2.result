@@ -1,0 +1,22 @@
+USE world;
+SELECT * FROM countrylanguage
+WHERE Language='Portuguese' AND IsOfficial='T';
+CountryCode	Language	IsOfficial	Percentage
+BRA	Portuguese	T	97.5
+CPV	Portuguese	T	0.0
+GNB	Portuguese	T	8.1
+MAC	Portuguese	T	2.3
+PRT	Portuguese	T	99.0
+TMP	Portuguese	T	0.0
+SELECT (
+SELECT Name FROM country
+WHERE Code=CountryCode
+) AS CountryName FROM countrylanguage
+WHERE Language='Portuguese' AND IsOfficial='T';
+CountryName
+Brazil
+Cape Verde
+Guinea-Bissau
+Macao
+Portugal
+East Timor

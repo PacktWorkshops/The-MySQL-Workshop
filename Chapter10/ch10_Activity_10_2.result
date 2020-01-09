@@ -1,0 +1,21 @@
+USE sakila;
+
+SELECT release_year, COUNT(*) FROM film
+WHERE release_year BETWEEN 2005 AND 2010
+GROUP BY release_year;
+
+WITH RECURSIVE years AS (
+  SELECT 2005 AS y
+  UNION ALL
+  SELECT y+1 FROM years WHERE y<2010
+) SELECT * FROM years;
+
+WITH RECURSIVE years AS (
+  SELECT 2005 AS y
+  UNION ALL
+  SELECT y+1 FROM years WHERE y<2010
+)
+SELECT y, COUNT(film.film_id)
+FROM years
+LEFT JOIN film ON years.y=film.release_year 
+GROUP BY years.y;

@@ -1,0 +1,117 @@
+USE world_simple;
+SELECT * FROM city WHERE ID=2460;
+ID	Name	CountryCode
+2460	Skopje	MKD
+EXPLAIN SELECT * FROM city WHERE ID=2460;
+id	select_type	table	partitions	type	possible_keys	key	key_len	ref	rows	filtered	Extra
+1	SIMPLE	city	NULL	ALL	NULL	NULL	NULL	NULL	5	20.00	Using where
+Warnings:
+Note	1003	/* select#1 */ select `world_simple`.`city`.`ID` AS `ID`,`world_simple`.`city`.`Name` AS `Name`,`world_simple`.`city`.`CountryCode` AS `CountryCode` from `world_simple`.`city` where (`world_simple`.`city`.`ID` = 2460)
+ALTER TABLE city ADD PRIMARY KEY (ID);
+EXPLAIN SELECT * FROM city WHERE ID=2460;
+id	select_type	table	partitions	type	possible_keys	key	key_len	ref	rows	filtered	Extra
+1	SIMPLE	city	NULL	const	PRIMARY	PRIMARY	4	const	1	100.00	NULL
+Warnings:
+Note	1003	/* select#1 */ select '2460' AS `ID`,'Skopje' AS `Name`,'MKD' AS `CountryCode` from `world_simple`.`city` where true
+EXPLAIN SELECT * FROM country co LEFT JOIN city ci
+ON ci.CountryCode=co.Code WHERE ci.ID=540;
+id	select_type	table	partitions	type	possible_keys	key	key_len	ref	rows	filtered	Extra
+1	SIMPLE	ci	NULL	const	PRIMARY	PRIMARY	4	const	1	100.00	NULL
+1	SIMPLE	co	NULL	ALL	NULL	NULL	NULL	NULL	2	50.00	Using where
+Warnings:
+Note	1003	/* select#1 */ select `world_simple`.`co`.`Code` AS `Code`,`world_simple`.`co`.`Name` AS `Name`,'540' AS `ID`,'Plovdiv' AS `Name`,'BGR' AS `CountryCode` from `world_simple`.`country` `co` join `world_simple`.`city` `ci` where ((`world_simple`.`co`.`Code` = 'BGR'))
+ALTER TABLE country ADD PRIMARY KEY (Code);
+EXPLAIN SELECT * FROM country co LEFT JOIN city ci
+ON ci.CountryCode=co.Code WHERE ci.ID=540;
+id	select_type	table	partitions	type	possible_keys	key	key_len	ref	rows	filtered	Extra
+1	SIMPLE	ci	NULL	const	PRIMARY	PRIMARY	4	const	1	100.00	NULL
+1	SIMPLE	co	NULL	const	PRIMARY	PRIMARY	3	const	1	100.00	NULL
+Warnings:
+Note	1003	/* select#1 */ select 'BGR' AS `Code`,'Bulgaria' AS `Name`,'540' AS `ID`,'Plovdiv' AS `Name`,'BGR' AS `CountryCode` from `world_simple`.`country` `co` join `world_simple`.`city` `ci` where true
+EXPLAIN FORMAT=JSON SELECT * FROM country co
+LEFT JOIN city ci ON ci.CountryCode=co.Code WHERE ci.ID=540;
+EXPLAIN
+{
+  "query_block": {
+    "select_id": 1,
+    "cost_info": {
+      "query_cost": "1.00"
+    },
+    "nested_loop": [
+      {
+        "table": {
+          "table_name": "ci",
+          "access_type": "const",
+          "possible_keys": [
+            "PRIMARY"
+          ],
+          "key": "PRIMARY",
+          "used_key_parts": [
+            "ID"
+          ],
+          "key_length": "4",
+          "ref": [
+            "const"
+          ],
+          "rows_examined_per_scan": 1,
+          "rows_produced_per_join": 1,
+          "filtered": "100.00",
+          "cost_info": {
+            "read_cost": "0.00",
+            "eval_cost": "0.10",
+            "prefix_cost": "0.00",
+            "data_read_per_join": "48"
+          },
+          "used_columns": [
+            "ID",
+            "Name",
+            "CountryCode"
+          ]
+        }
+      },
+      {
+        "table": {
+          "table_name": "co",
+          "access_type": "const",
+          "possible_keys": [
+            "PRIMARY"
+          ],
+          "key": "PRIMARY",
+          "used_key_parts": [
+            "Code"
+          ],
+          "key_length": "3",
+          "ref": [
+            "const"
+          ],
+          "rows_examined_per_scan": 1,
+          "rows_produced_per_join": 1,
+          "filtered": "100.00",
+          "cost_info": {
+            "read_cost": "0.00",
+            "eval_cost": "0.10",
+            "prefix_cost": "0.00",
+            "data_read_per_join": "64"
+          },
+          "used_columns": [
+            "Code",
+            "Name"
+          ]
+        }
+      }
+    ]
+  }
+}
+Warnings:
+Note	1003	/* select#1 */ select 'BGR' AS `Code`,'Bulgaria' AS `Name`,'540' AS `ID`,'Plovdiv' AS `Name`,'BGR' AS `CountryCode` from `world_simple`.`country` `co` join `world_simple`.`city` `ci` where true
+EXPLAIN FORMAT=TREE SELECT * FROM country co 
+LEFT JOIN city ci ON ci.CountryCode=co.Code
+WHERE ci.ID=540;
+EXPLAIN
+-> Rows fetched before execution
+
+EXPLAIN ANALYZE SELECT * FROM country co 
+LEFT JOIN city ci ON ci.CountryCode=co.Code
+WHERE ci.ID=540;
+EXPLAIN
+OUTPUT

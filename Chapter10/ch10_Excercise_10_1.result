@@ -1,0 +1,10 @@
+USE world;
+SELECT ci.Name, ci.Population
+FROM city ci JOIN country co ON ci.CountryCode=co.Code
+WHERE co.Region='Middle East' ORDER BY ci.Population DESC LIMIT 5;
+Name	Population
+Istanbul	8787958
+Baghdad	4336000
+Riyadh	3324000
+Ankara	3038159
+Izmir	2130359

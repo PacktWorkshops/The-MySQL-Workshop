@@ -1,0 +1,52 @@
+USE world_simple;
+SELECT Name FROM country WHERE Code='ROM'
+UNION
+SELECT Name FROM country WHERE Code='BGR';
+Name
+Romania
+Bulgaria
+WITH RECURSIVE numbers AS (
+SELECT 1 AS n
+UNION ALL
+SELECT n+1 FROM numbers WHERE n<12
+)
+SELECT 
+n,
+monthname(CONCAT("2019-",n,"-01"))
+FROM numbers;
+n	monthname(CONCAT("2019-",n,"-01"))
+1	January
+2	February
+3	March
+4	April
+5	May
+6	June
+7	July
+8	August
+9	September
+10	October
+11	November
+12	December
+WITH RECURSIVE numbers AS (
+SELECT 1 AS n
+UNION ALL
+SELECT n+1 FROM numbers WHERE n<12
+),
+months AS (
+SELECT n, monthname(CONCAT("2019-",n,"-01"))
+FROM numbers
+)
+SELECT * FROM months;
+n	monthname(CONCAT("2019-",n,"-01"))
+1	January
+2	February
+3	March
+4	April
+5	May
+6	June
+7	July
+8	August
+9	September
+10	October
+11	November
+12	December
