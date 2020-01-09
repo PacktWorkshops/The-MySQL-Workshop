@@ -1,0 +1,43 @@
+USE world;
+SELECT Name, IndepYear, Population, SurfaceArea FROM country 
+WHERE YEAR(NOW()) - IndepYear > 1000;
+Name	IndepYear	Population	SurfaceArea
+China	-1523	1277558000	9572900.00
+Denmark	800	5330000	43094.00
+Ethiopia	-1000	62565000	1104300.00
+France	843	59225700	551500.00
+Japan	-660	126714000	377829.00
+San Marino	885	27000	61.00
+Sweden	836	8861400	449964.00
+SELECT
+Name, 
+IndepYear,
+YEAR(NOW()) - IndepYear,
+Population,
+ROUND(Population/SurfaceArea,0)
+FROM country
+WHERE YEAR(NOW()) - IndepYear > 1000;
+Name	IndepYear	YEAR(NOW()) - IndepYear	Population	ROUND(Population/SurfaceArea,0)
+China	-1523	3542	1277558000	133
+Denmark	800	1219	5330000	124
+Ethiopia	-1000	3019	62565000	57
+France	843	1176	59225700	107
+Japan	-660	2679	126714000	335
+San Marino	885	1134	27000	443
+Sweden	836	1183	8861400	20
+SELECT
+Name, 
+IndepYear,
+YEAR(NOW()) - IndepYear,
+ROUND(Population / 1000000, 0),
+ROUND(Population/SurfaceArea,0)
+FROM country
+WHERE YEAR(NOW()) - IndepYear > 1000;
+Name	IndepYear	YEAR(NOW()) - IndepYear	ROUND(Population / 1000000, 0)	ROUND(Population/SurfaceArea,0)
+China	-1523	3542	1278	133
+Denmark	800	1219	5	124
+Ethiopia	-1000	3019	63	57
+France	843	1176	59	107
+Japan	-660	2679	127	335
+San Marino	885	1134	0	443
+Sweden	836	1183	9	20

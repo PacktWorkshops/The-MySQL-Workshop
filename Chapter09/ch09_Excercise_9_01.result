@@ -1,0 +1,14 @@
+USE world;
+DESCRIBE countrylanguage;
+Field	Type	Null	Key	Default	Extra
+CountryCode	char(3)	NO	PRI		
+Language	char(30)	NO	PRI		
+IsOfficial	enum('T','F')	NO		F	
+Percentage	float(4,1)	NO		0.0	
+SELECT Language FROM countrylanguage LIMIT 5;
+Language
+Dutch
+English
+Papiamento
+Spanish
+Balochi

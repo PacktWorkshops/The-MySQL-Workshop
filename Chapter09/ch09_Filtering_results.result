@@ -1,0 +1,45 @@
+USE world;
+SELECT * FROM city WHERE CountryCode='CHE';
+ID	Name	CountryCode	District	Population
+3245	Zürich	CHE	Zürich	336800
+3246	Geneve	CHE	Geneve	173500
+3247	Basel	CHE	Basel-Stadt	166700
+3248	Bern	CHE	Bern	122700
+3249	Lausanne	CHE	Vaud	114500
+SELECT Name, Population FROM country WHERE Continent='Oceania'
+AND Population > 1000000;
+Name	Population
+Australia	18886000
+New Zealand	3862000
+Papua New Guinea	4807000
+SELECT Name FROM country WHERE Name LIKE 'United %';
+Name
+United Arab Emirates
+United Kingdom
+United States Minor Outlying Islands
+United States
+SELECT * FROM city WHERE District='New York' OR District='New Jersey'
+AND Population>100000;
+ID	Name	CountryCode	District	Population
+3793	New York	USA	New York	8008278
+3850	Buffalo	USA	New York	292648
+3855	Newark	USA	New Jersey	273546
+3864	Jersey City	USA	New Jersey	240055
+3871	Rochester	USA	New York	219773
+3888	Yonkers	USA	New York	196086
+3932	Paterson	USA	New Jersey	149222
+3935	Syracuse	USA	New York	147306
+3978	Elizabeth	USA	New Jersey	120568
+4048	Albany	USA	New York	93994
+SELECT * FROM city WHERE (District='New York' OR District='New Jersey')
+AND Population>100000;
+ID	Name	CountryCode	District	Population
+3793	New York	USA	New York	8008278
+3850	Buffalo	USA	New York	292648
+3855	Newark	USA	New Jersey	273546
+3864	Jersey City	USA	New Jersey	240055
+3871	Rochester	USA	New York	219773
+3888	Yonkers	USA	New York	196086
+3932	Paterson	USA	New Jersey	149222
+3935	Syracuse	USA	New York	147306
+3978	Elizabeth	USA	New Jersey	120568

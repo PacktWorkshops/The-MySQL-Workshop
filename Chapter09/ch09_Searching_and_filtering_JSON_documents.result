@@ -1,0 +1,28 @@
+{"_id":1,"name":"Kabul","country":{"GNP":5976,"code":"AFG","name":"Afghanistan","code2":"AF","region":"Southern and Central Asia","continent":"Asia","local_name":"Afganistan/Afqanestan","population":22720000,"surface_area":652090,"head_of_state":"Mohammad Omar","government_form":"Islamic Emirate","independence_year":1919},"district":"Kabol","language":{"Dari":{"percentage":32.099998474121094,"is_official":true},"Uzbek":{"percentage":8.800000190734863,"is_official":false},"Pashto":{"percentage":52.400001525878906,"is_official":true},"Balochi":{"percentage":0.8999999761581421,"is_official":false},"Turkmenian":{"percentage":1.899999976158142,"is_official":false}},"is_capital":true,"population":1780000}
+{"_id":2974,"name":"Paris","country":{"GNP":1424285,"code":"FRA","name":"France","code2":"FR","region":"Western Europe","continent":"Europe","local_name":"France","population":59225700,"surface_area":551500,"head_of_state":"Jacques Chirac","government_form":"Republic","independence_year":843},"district":"Île-de-France","language":{"Arabic":{"percentage":2.5,"is_official":false},"French":{"percentage":93.5999984741211,"is_official":true},"Italian":{"percentage":0.4000000059604645,"is_official":false},"Spanish":{"percentage":0.4000000059604645,"is_official":false},"Turkish":{"percentage":0.4000000059604645,"is_official":false},"Portuguese":{"percentage":1.2000000476837158,"is_official":false}},"is_capital":true,"population":2125246}
+{"name":"Kabul"}
+{"name":"New Delhi"}
+{"name":"Yerevan"}
+{"name":"Oranjestad"}
+{"name":"Canberra"}
+{"name":"Kabul","country.name":"Afghanistan"}
+{"name":"New Delhi","country.name":"India"}
+{"name":"Yerevan","country.name":"Armenia"}
+{"name":"Oranjestad","country.name":"Aruba"}
+{"name":"Canberra","country.name":"Australia"}
+{"country.name":"Kazakstan"}
+{"country.name":"Kyrgyzstan"}
+{"country.name":"Mongolia"}
+{"country.name":"Turkmenistan"}
+{"country.name":"Uzbekistan"}
+{"country.name":"Russian Federation"}
+{"name":"Moscow","population":8389200}
+{"name":"St Petersburg","population":4694000}
+{"name":"Novosibirsk","population":1398800}
+{"name":"Nizni Novgorod","population":1357000}
+{"name":"Jekaterinburg","population":1266300}
+{"name":"Bucuresti","population":2016131,"pct_of_country":8.97833938233395,"country.population":22455500}
+{"name":"Iasi","population":348070,"pct_of_country":1.5500434192068755,"country.population":22455500}
+{"name":"Constanta","population":342264,"pct_of_country":1.5241878381688228,"country.population":22455500}
+{"name":"Cluj-Napoca","population":332498,"pct_of_country":1.4806973792612057,"country.population":22455500}
+{"name":"Galati","population":330276,"pct_of_country":1.4708022533455056,"country.population":22455500}

@@ -1,0 +1,29 @@
+USE world;
+DESCRIBE country;
+Field	Type	Null	Key	Default	Extra
+Code	char(3)	NO	PRI		
+Name	char(52)	NO			
+Continent	enum('Asia','Europe','North America','Africa','Oceania','Antarctica','South America')	NO		Asia	
+Region	char(26)	NO			
+SurfaceArea	float(10,2)	NO		0.00	
+IndepYear	smallint(6)	YES		NULL	
+Population	int(11)	NO		0	
+LifeExpectancy	float(3,1)	YES		NULL	
+GNP	float(10,2)	YES		NULL	
+GNPOld	float(10,2)	YES		NULL	
+LocalName	char(45)	NO			
+GovernmentForm	char(45)	NO			
+HeadOfState	char(60)	YES		NULL	
+Capital	int(11)	YES		NULL	
+Code2	char(2)	NO			
+SELECT Name, SurfaceArea FROM country WHERE Region='Western Europe';
+Name	SurfaceArea
+Austria	83859.00
+Belgium	30518.00
+Switzerland	41284.00
+Germany	357022.00
+France	551500.00
+Liechtenstein	160.00
+Luxembourg	2586.00
+Monaco	1.50
+Netherlands	41526.00

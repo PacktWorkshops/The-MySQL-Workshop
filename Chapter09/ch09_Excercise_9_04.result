@@ -1,0 +1,18 @@
+USE world;
+SELECT Continent, AVG(GNP), SUM(SurfaceArea)
+FROM country GROUP BY Continent;
+Continent	AVG(GNP)	SUM(SurfaceArea)
+North America	261854.789189	24214470.00
+Asia	150105.725490	31881005.00
+Africa	10006.465517	30250377.00
+Europe	206497.065217	23049133.90
+South America	107991.000000	17864926.00
+Oceania	14991.953571	8564294.00
+Antarctica	0.000000	13132101.00
+SELECT Region, SUM(SurfaceArea) FROM country
+WHERE Continent='Asia' GROUP BY Region;
+Region	SUM(SurfaceArea)
+Southern and Central Asia	10791130.00
+Middle East	4820592.00
+Southeast Asia	4494801.00
+Eastern Asia	11774482.00

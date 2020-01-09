@@ -1,0 +1,8 @@
+SELECT 'This is a test', VERSION()
+INTO OUTFILE '/var/lib/mysql-files/example.txt';
+This is a test	8.0.17
+SELECT 'This is a test', VERSION()
+INTO OUTFILE '/var/lib/mysql-files/example.csv'
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"';
+"This is a test","8.0.17"
