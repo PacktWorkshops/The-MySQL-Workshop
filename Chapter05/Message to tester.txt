@@ -1,0 +1,21 @@
+Hello tester
+
+The folder named 
+
+node_modules.zip
+
+contains all the required modules to run the scripts. 
+
+Extract it into the folder you will be running the scripts from.
+
+Several of the exercises requires the trainee to use SQL script files they have created, 
+I have placed a copy of the file in each of the folders they are required. 
+The file I created in my testing is named 
+
+PracticeDatabase 20190926a.sql
+
+You may want to use the file you created instead.
+
+Thank you
+
+Tom
