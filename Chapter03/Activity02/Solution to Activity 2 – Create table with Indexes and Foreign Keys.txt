@@ -1,0 +1,30 @@
+-- -----------------------------------------------------
+-- Table `autoclub`.`eventmemberregistration`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `autoclub`.`eventmemberregistration` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `ClubEventID` INT NOT NULL,
+  `MemberID` INT NOT NULL,
+  `ExpectedGuestCount` INT NOT NULL DEFAULT 0,
+  `RegistrationDate` DATE NOT NULL,
+  `FeesPaid` BIT NOT NULL DEFAULT 0,
+  `TotalFees` DOUBLE NOT NULL DEFAULT 0,
+  `MemberAttended` BIT NOT NULL DEFAULT 0,
+  `ActualGuestCount` INT NOT NULL DEFAULT 0,
+  `Notes` MEDIUMTEXT NULL,
+  `WhenAdded` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `LastModified` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  INDEX `Idx_EventID` (`ClubEventID` DESC),
+  INDEX `FK_EventReg_Members_idx` (`MemberID` ASC),
+  CONSTRAINT `FK_EventReg_ClubEvents`
+    FOREIGN KEY (`ClubEventID`)
+    REFERENCES `autoclub`.`clubevents` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `FK_EventReg_Members`
+    FOREIGN KEY (`MemberID`)
+    REFERENCES `autoclub`.`members` (`ID`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;

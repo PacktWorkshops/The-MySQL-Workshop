@@ -1,0 +1,1 @@
+CREATE SCHEMA `chapter3_activity1`;

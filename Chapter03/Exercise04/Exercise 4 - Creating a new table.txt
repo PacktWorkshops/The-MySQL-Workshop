@@ -1,0 +1,12 @@
+-- -----------------------------------------------------
+-- Table `autoclub`.`user`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `autoclub`.`user` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(16) NOT NULL,
+  `email` VARCHAR(255) NULL,
+  `password` VARCHAR(32) NOT NULL,
+  `Active` BIT NOT NULL DEFAULT 1,
+  `WhenAdded` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  `LastModified` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`));

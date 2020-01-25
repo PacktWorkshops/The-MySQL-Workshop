@@ -1,0 +1,68 @@
+-- -----------------------------------------------------
+-- Table `autoclub`.`eventvenues`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `autoclub`.`eventvenues` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `VenueName` VARCHAR(100) NOT NULL,
+  `VenueAddress1` VARCHAR(255) NULL,
+  `VenueAddress2` VARCHAR(255) NULL,
+  `VenueTown` VARCHAR(30) NULL,
+  `VenueState` INT NULL,
+  `VenuePostcode` VARCHAR(10) NULL,
+  `VenueContactName` VARCHAR(20) NULL,
+  `VenuePhone` VARCHAR(15) NULL,
+  `VenueEmail` VARCHAR(255) NULL,
+  `VenueWebsite` VARCHAR(255) NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `FK_EventVenue_States_idx` (`VenueState` ASC),
+  UNIQUE INDEX `Idx_VenueName` (`VenueName` ASC),
+  CONSTRAINT `FK_EventVenue_States`
+    FOREIGN KEY (`VenueState`)
+    REFERENCES `autoclub`.`states` (`ID`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `autoclub`.`clubevents`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `autoclub`.`clubevents` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `EventType` INT NULL,
+  `EventDate` DATE NOT NULL COMMENT 'Date of the event',
+  `EventStartTime` TIME NOT NULL COMMENT 'Time the event will start',
+  `EventEndTime` TIME NOT NULL COMMENT 'Expected time the event will finish',
+  `RegistrationTime` TIME NOT NULL COMMENT 'Members must register on the day by this time',
+  `VenueStart` INT NOT NULL COMMENT 'Venue or location where the event will start from',
+  `VenuEnd` INT NOT NULL COMMENT 'Venue or location where the event will end',
+  `EntriesClose` DATETIME NULL COMMENT 'Date and Time when entry registrations close',
+  `EntryFee` DOUBLE NOT NULL DEFAULT 0,
+  `EventTitle` VARCHAR(150) NOT NULL,
+  `EventBlurb` MEDIUMTEXT NULL,
+  `clubeventscol` VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `FK_ClubEvents_EventVenue_idx` (`VenueStart` ASC),
+  INDEX `FK_ClubEvents_EventVenue_End_idx` (`VenuEnd` ASC),
+  INDEX `Idx_EventDate` (`EventDate` DESC),
+  CONSTRAINT `FK_ClubEvents_EventVenue_Start`
+    FOREIGN KEY (`VenueStart`)
+    REFERENCES `autoclub`.`eventvenues` (`ID`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
+  CONSTRAINT `FK_ClubEvents_EventVenue_End`
+    FOREIGN KEY (`VenuEnd`)
+    REFERENCES `autoclub`.`eventvenues` (`ID`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `autoclub`.`eventtype`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `autoclub`.`eventtype` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `EventType` VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB;
