@@ -1,0 +1,1 @@
+update `autoclub`.`members` SET `DOB` = '2000-10-15' WHERE ID = 2;

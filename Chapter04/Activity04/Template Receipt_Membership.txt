@@ -1,0 +1,21 @@
+Membership Fee - Receipt of Payment
+
+Member
+<Surname>, <FirstName> <MiddleNames>
+<Address1>
+<Address2>
+<Town> <State> <Postcode>
+
+Payment Details
+Date Paid  : <PaymentDate>
+Amount Paid: <Amount>
+
+Message from the club
+
+Dear <FirstName>,
+
+We would like to thank you for renewing your membership.
+
+We hope to see you at the many events we organise for our members during the next year.
+
+Management
