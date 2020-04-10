@@ -76,8 +76,6 @@ CREATE TABLE `members` (
   `DOB` date NOT NULL,
   `Signature` blob,
   `Photo` blob,
-  `PhotoPath` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `SigPath` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Active` bit(1) NOT NULL DEFAULT b'1',
   `JoinDate` date NOT NULL,
   `InactiveDate` date DEFAULT NULL,
