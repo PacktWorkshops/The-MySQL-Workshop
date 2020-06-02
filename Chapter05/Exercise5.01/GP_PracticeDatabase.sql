@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `BackupPractice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `BackupPractice`;
+CREATE DATABASE  IF NOT EXISTS `backuppractice` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `backuppractice`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
--- Host: 192.168.0.3    Database: BackupPractice
+-- Host: 192.168.0.3    Database: backuppractice
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
