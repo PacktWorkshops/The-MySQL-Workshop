@@ -28,15 +28,10 @@ mysqlconnection.connect(function(err) {
   //No error so report to the console that connection was successful
   //This can be omitted
   console.log("Connected to MySQL!"); 	
-  
+	
+   process.exit();  
   
   //Close off the connection blocks bracketing
   });
 
 //End the Connection Block
-
-//This is the magic line, it allows the object mysqlconnection to be exported
-//which means other scripts can .require(myqlconnection) and use the connection...so cool
-module.exports = mysqlconnection;
-
-//No requirement for a process.exit in this script

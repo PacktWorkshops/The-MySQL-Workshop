@@ -36,7 +36,3 @@ mysqlconnection.connect(function(err) {
 
 //End the Connection Block
 
-//This is the magic line, it allows the object mysqlconnection to be exported
-//which means other scripts can .require(myqlconnection) and use the connection...so cool
-
-//No requirement for a process.exit in this script
