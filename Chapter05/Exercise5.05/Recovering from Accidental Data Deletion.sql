@@ -1,0 +1,1 @@
+DELETE FROM import_test.country;
