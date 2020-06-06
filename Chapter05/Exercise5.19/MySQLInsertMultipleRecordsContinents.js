@@ -1,6 +1,6 @@
 //This script inserts a single record into the new database table
 //You guessed it, include the connection module
-var mysqlconnection = require("./../mysqlconnection.js");
+var mysqlconnection = require("./mysqlconnection.js");
 
 //Create a query to insert the data
 //Notice we need to include the database name with the table,  world_statistics.continents

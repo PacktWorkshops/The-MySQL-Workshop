@@ -1,4 +1,4 @@
-var mysqlconnection = require("./../mysqlconnection.js");
+var mysqlconnection = require("./mysqlconnection.js");
 
 var sql = "CREATE TABLE `world_statistics`.`country` ( "
 sql = sql + "`CountryID` int(11) NOT NULL AUTO_INCREMENT, "
