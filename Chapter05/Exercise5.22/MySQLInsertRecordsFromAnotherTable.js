@@ -8,7 +8,7 @@ var mysqlconnection = require("./mysqlconnection.js");
 //
 
 //Create the SQL to extract the data from the source table, temp
-var records = "SELECT `temp`.`Country Code`, `temp`.`Country Name`,`temp`.`ContinentID` FROM world_statistics.temp WHERE `temp`.`CountryID` < 10 ORDER BY `temp`.`CountryID`";
+var records = "SELECT `Country Code`, `Country Name`, `ContinentID` FROM world_statistics.temp WHERE `CountryID` < 10 ORDER BY `CountryID`";
 
 //Create the insert query but only with field names, no VALUES statement
 var sql = "INSERT INTO world_statistics.country (`Country Code`,`Country Name`,`ContinentID`)";
