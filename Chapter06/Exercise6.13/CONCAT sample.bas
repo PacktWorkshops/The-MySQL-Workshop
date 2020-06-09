@@ -1,0 +1,1 @@
+SELECT CONCAT('This ','is ','an ', 'example ','of ','string ','CONCATenation')

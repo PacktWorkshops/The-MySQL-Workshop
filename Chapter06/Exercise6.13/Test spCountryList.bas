@@ -1,0 +1,1 @@
+call spCountryList_par("Jobstats","FP.CPI.TOTL")
