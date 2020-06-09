@@ -42,18 +42,14 @@ Private Sub ArtistTrackSales(ByVal pArtist As String)
                     
                 End If
             Else
-                
+                'This line will be reached if there is no data, we do nothing and drop through                
             End If
-
 Leavesub:
     'Close recordset
     RS.Close
     Set RS = Nothing
     Exit Sub
-
 HandleError:
-    
     MsgBox Err & " " & Error(Err)
     Resume Leavesub
-    
 End Sub

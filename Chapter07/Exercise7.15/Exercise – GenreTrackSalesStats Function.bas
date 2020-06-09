@@ -31,7 +31,7 @@ Public Function GenreTrackSalesStats() As Boolean
 
 '4.	Now we call the new ODBC connection function. The difference between this and the DSNless connection is here we are using the global ODBC variable and also passing in the name of the DSN we want to 'use. You can use this function with any Named DSN
 
-    If ConnectDB_ODBC(g_Conn_ODBC, “chinook”) = True Then
+    If ConnectDB_ODBC(g_Conn_ODBC, "chinook") = True Then
 
 '5.	Set the recordset variable and open the recordset, passing in the SQL and the global ODBC variable
 
