@@ -1,4 +1,9 @@
-CREATE PROCEDURE `sp_CountIdentificationTypes`( INOUT TemplateText LongText)
+USE `autoclub`;
+DROP procedure IF EXISTS `sp_CountIdentificationTypes`;
+
+DELIMITER $$
+USE `autoclub`$$
+CREATE DEFINER=`Tom`@`%` PROCEDURE `sp_CountIdentificationTypes`( INOUT TemplateText LongText)
 BEGIN
 
 -- Create the SELECT statement, the data will be coming from a 
@@ -25,7 +30,8 @@ FROM
   INNER JOIN identificationtype ON identification.IDType = identificationtype.ID
   
 -- GROUP BY ensures each identificationtype found is grouped together
-GROUP BY  identificationtype.identificationtype
+GROUP BY
+  identificationtype.identificationtype
 ) sq;
 
 
@@ -45,4 +51,6 @@ SET TemplateText = REPLACE(TemplateText,'<ReportDate>', CURDATE());
 SET TemplateText = REPLACE(TemplateText,'<IdentificationData>', @IDCount);
 SET TemplateText = REPLACE(TemplateText,'<TotalMembers>', CONVERT(@ActiveMemberCount,UNSIGNED));
 
-END
+END$$
+
+DELIMITER ;

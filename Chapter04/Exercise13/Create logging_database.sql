@@ -6,6 +6,7 @@ CREATE TABLE `logging_database`.`changelog` (
     `ID` INT NOT NULL AUTO_INCREMENT,
     `Database` VARCHAR(45) NOT NULL,
     `TableName` VARCHAR(45) NOT NULL,
+    `PKValue` varchar(45) NOT NULL,
     `OldValue` VARCHAR(255) NOT NULL,
     `NewValue` VARCHAR(255) NOT NULL,
     `WhenLogged` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
