@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `identificationtype`;
 CREATE TABLE `identificationtype` (
   `ID` int(11) DEFAULT NULL,
   `identificationtype` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ DROP TABLE IF EXISTS `make`;
 CREATE TABLE `make` (
   `ID` int(11) DEFAULT NULL,
   `Make` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ DROP TABLE IF EXISTS `states`;
 CREATE TABLE `states` (
   `ID` int(11) DEFAULT NULL,
   `State` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -96,7 +96,7 @@ CREATE TABLE `vehiclemodel` (
   `ID` int(11) DEFAULT NULL,
   `MakeID` int(11) DEFAULT NULL,
   `Model` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +119,7 @@ DROP TABLE IF EXISTS `vehicleshape`;
 CREATE TABLE `vehicleshape` (
   `ID` int(11) DEFAULT NULL,
   `Shape` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ DROP TABLE IF EXISTS `vehicleuse`;
 CREATE TABLE `vehicleuse` (
   `ID` int(11) DEFAULT NULL,
   `Use` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +166,7 @@ CREATE TABLE `vehiclevariant` (
   `ID` int(11) DEFAULT NULL,
   `ModelID` int(11) DEFAULT NULL,
   `Variant` varchar(75) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +188,7 @@ DROP TABLE IF EXISTS `years`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `years` (
   `Year` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

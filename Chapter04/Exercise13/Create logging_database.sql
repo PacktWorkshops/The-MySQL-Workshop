@@ -1,6 +1,6 @@
 DROP SCHEMA IF EXISTS `logging_database`;
 
-CREATE DATABASE `logging_database` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE `logging_database` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
 CREATE TABLE `logging_database`.`changelog` (
     `ID` INT NOT NULL AUTO_INCREMENT,

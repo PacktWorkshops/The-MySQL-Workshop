@@ -26,7 +26,7 @@ CREATE TABLE `countrypopulation` (
   `Country Code` varchar(5) DEFAULT NULL,
   `StatisticValue` double DEFAULT NULL,
   `Year` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

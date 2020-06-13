@@ -52,7 +52,7 @@ CREATE TABLE `temp` (
   `Country Name` varchar(50) DEFAULT NULL,
   `ContinentID` int(11) DEFAULT NULL,
   PRIMARY KEY (`CountryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
