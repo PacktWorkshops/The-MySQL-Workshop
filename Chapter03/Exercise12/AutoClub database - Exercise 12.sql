@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `autoclub` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `autoclub` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `autoclub`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
@@ -9,7 +9,7 @@ USE `autoclub`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +23,7 @@ USE `autoclub`;
 
 DROP TABLE IF EXISTS `clubevents`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `clubevents` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `EventType` int(11) DEFAULT NULL,
@@ -35,9 +35,9 @@ CREATE TABLE `clubevents` (
   `VenuEnd` int(11) NOT NULL COMMENT 'Venue or location where the event will end',
   `EntriesClose` datetime DEFAULT NULL COMMENT 'Date and Time when entry registrations close',
   `EntryFee` double NOT NULL DEFAULT '0',
-  `EventTitle` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `EventBlurb` mediumtext COLLATE utf8_unicode_ci,
-  `clubeventscol` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `EventTitle` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `EventBlurb` mediumtext COLLATE utf8mb4_unicode_ci,
+  `clubeventscol` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `FK_ClubEvents_EventVenue_idx` (`VenueStart`),
   KEY `FK_ClubEvents_EventVenue_End_idx` (`VenuEnd`),
@@ -46,7 +46,7 @@ CREATE TABLE `clubevents` (
   CONSTRAINT `FK_ClubEvents_EventVenue_End` FOREIGN KEY (`VenuEnd`) REFERENCES `eventvenues` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_ClubEvents_EventVenue_Start` FOREIGN KEY (`VenueStart`) REFERENCES `eventvenues` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Clubevents_EventType` FOREIGN KEY (`EventType`) REFERENCES `eventtype` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `eventmemberregistration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `eventmemberregistration` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ClubEventID` int(11) NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE `eventmemberregistration` (
   `TotalFees` double NOT NULL DEFAULT '0',
   `MemberAttended` bit(1) NOT NULL DEFAULT b'0',
   `ActualGuestCount` int(11) NOT NULL DEFAULT '0',
-  `Notes` mediumtext COLLATE utf8_unicode_ci,
+  `Notes` mediumtext COLLATE utf8mb4_unicode_ci,
   `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
@@ -84,7 +84,7 @@ CREATE TABLE `eventmemberregistration` (
   KEY `FK_EventReg_ClubEvents` (`ClubEventID`),
   CONSTRAINT `FK_EventReg_ClubEvents` FOREIGN KEY (`ClubEventID`) REFERENCES `clubevents` (`ID`),
   CONSTRAINT `FK_EventReg_Members` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,12 +102,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `eventtype`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `eventtype` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `EventType` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `EventType` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,24 +125,24 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `eventvenues`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `eventvenues` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `VenueName` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `VenueAddress1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `VenueAddress2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `VenueTown` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `VenueName` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `VenueAddress1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `VenueAddress2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `VenueTown` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `VenueState` int(11) DEFAULT NULL,
-  `VenuePostcode` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `VenueContactName` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `VenuePhone` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `VenueEmail` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `VenueWebsite` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `VenuePostcode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `VenueContactName` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `VenuePhone` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `VenueEmail` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `VenueWebsite` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `Idx_VenueName` (`VenueName`),
   KEY `FK_EventVenue_States_idx` (`VenueState`),
   CONSTRAINT `FK_EventVenue_States` FOREIGN KEY (`VenueState`) REFERENCES `states` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -160,16 +160,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `identification`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `identification` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MemberID` int(11) NOT NULL,
   `IDType` int(11) NOT NULL,
   `StateOfIssue` int(11) NOT NULL,
-  `IDNumber` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `IDNumber` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ExpiryDate` date NOT NULL,
-  `Class` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Conditions` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Class` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Conditions` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
@@ -178,7 +178,7 @@ CREATE TABLE `identification` (
   KEY `FK_IdentificationMember_idx` (`MemberID`),
   CONSTRAINT `FK_Identification_IdentificationType` FOREIGN KEY (`IDType`) REFERENCES `identificationtype` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Identification_Members` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=297 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=297 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -197,12 +197,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `identificationtype`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `identificationtype` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `identificationtype` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `identificationtype` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -221,13 +221,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `lookups`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `lookups` (
-  `Key` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Value` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `Descriptions` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `Key` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Value` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Descriptions` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`Key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -246,12 +246,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `make`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `make` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Make` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Make` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -270,15 +270,15 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `memberaddress`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `memberaddress` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MemberID` int(11) NOT NULL,
-  `StreetAddress1` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `StreetAddress2` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Town` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `StreetAddress1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `StreetAddress2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Town` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `State` int(11) NOT NULL,
-  `Postcode` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `Postcode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
@@ -286,7 +286,7 @@ CREATE TABLE `memberaddress` (
   KEY `FK_MemberAddress_States_idx` (`State`),
   CONSTRAINT `FK_MemberAddress_Members` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_MemberAddress_States` FOREIGN KEY (`State`) REFERENCES `states` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,17 +305,17 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `members`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `members` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Surname` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `FirstName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `MiddleNames` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Surname` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FirstName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `MiddleNames` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `DOB` date NOT NULL,
   `Signature` blob,
   `Photo` blob,
-  `PhotoPath` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `SigPath` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `PhotoPath` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `SigPath` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Active` bit(1) NOT NULL DEFAULT b'1',
   `JoinDate` date NOT NULL,
   `InactiveDate` date DEFAULT NULL,
@@ -323,7 +323,7 @@ CREATE TABLE `members` (
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
   KEY `Surname` (`Surname`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -342,7 +342,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `membershipfees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `membershipfees` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MemberID` int(11) NOT NULL,
@@ -353,7 +353,7 @@ CREATE TABLE `membershipfees` (
   PRIMARY KEY (`ID`),
   KEY `FK_MembershipFees_Members_idx` (`MemberID`),
   CONSTRAINT `FK_MembershipFees_Members` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -372,12 +372,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `states`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `states` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `State` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `State` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -396,10 +396,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table1`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `table1` (
   `ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -418,10 +418,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `table2` (
   `ID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -440,18 +440,18 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(16) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `password` varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Active` bit(1) NOT NULL DEFAULT b'1',
   `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `idx_username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -469,12 +469,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vehicle`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vehicle` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MemberID` int(11) NOT NULL,
   `RegoExpires` date NOT NULL,
-  `RegNumb` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `RegNumb` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Use` int(11) NOT NULL,
   `Year` int(11) NOT NULL,
   `Make` int(11) NOT NULL,
@@ -482,14 +482,14 @@ CREATE TABLE `vehicle` (
   `Variant` int(11) NOT NULL,
   `Shape` int(11) NOT NULL,
   `EngCap` double NOT NULL,
-  `VIN` varchar(17) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `VIN` varchar(17) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Tare` int(11) DEFAULT NULL,
   `GVM` int(11) DEFAULT NULL,
   `GCM` int(11) DEFAULT NULL,
   `Passengers` int(11) NOT NULL,
-  `EngNumb` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
-  `AxleCode` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Conditions` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `EngNumb` varchar(12) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `AxleCode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Conditions` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
@@ -507,7 +507,7 @@ CREATE TABLE `vehicle` (
   CONSTRAINT `FK_Vehicle_VehicleUse` FOREIGN KEY (`Use`) REFERENCES `vehicleuse` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Vehicle_VehicleVariant` FOREIGN KEY (`Variant`) REFERENCES `vehiclevariant` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Vehicle_Years` FOREIGN KEY (`Year`) REFERENCES `years` (`Year`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -526,13 +526,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vehiclemodel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vehiclemodel` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MakeID` int(11) DEFAULT NULL,
-  `Model` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Model` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=591 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=591 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -551,12 +551,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vehicleshape`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vehicleshape` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Shape` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Shape` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -575,12 +575,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vehicleuse`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vehicleuse` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Use` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Use` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -599,13 +599,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `vehiclevariant`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `vehiclevariant` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `ModelID` int(11) DEFAULT NULL,
-  `Variant` varchar(75) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Variant` varchar(75) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1252 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1252 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -624,11 +624,11 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `years`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `years` (
   `Year` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Year`)
-) ENGINE=InnoDB AUTO_INCREMENT=2026 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2026 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

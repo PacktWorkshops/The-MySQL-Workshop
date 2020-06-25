@@ -4,13 +4,13 @@ USE world_statistics;
 
 DROP TABLE IF EXISTS `temp`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `temp` (
   `Country Code` varchar(5) DEFAULT NULL,
   `Capital` varchar(50) DEFAULT NULL,
   `Is_Independent` varchar(25) DEFAULT NULL,
   `Currency` varchar(5) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

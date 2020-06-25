@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `chinook` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `chinook` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `chinook`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
@@ -9,7 +9,7 @@ USE `chinook`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,13 +23,13 @@ USE `chinook`;
 
 DROP TABLE IF EXISTS `album`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `album` (
   `AlbumId` int(11) NOT NULL AUTO_INCREMENT,
-  `Title` varchar(160) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `Title` varchar(160) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `ArtistId` int(11) NOT NULL,
   PRIMARY KEY (`AlbumId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,12 +48,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `artist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `artist` (
   `ArtistId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Name` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`ArtistId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,23 +72,23 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `customer`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customer` (
   `CustomerId` int(11) NOT NULL AUTO_INCREMENT,
-  `FirstName` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `LastName` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Company` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Address` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `City` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `State` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Country` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `PostalCode` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Phone` varchar(24) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Fax` varchar(24) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Email` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `FirstName` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `LastName` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Company` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Address` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `City` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `State` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Country` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PostalCode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Phone` varchar(24) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Fax` varchar(24) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `SupportRepId` int(11) DEFAULT NULL,
   PRIMARY KEY (`CustomerId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,25 +107,25 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employee` (
   `EmployeeId` int(11) NOT NULL AUTO_INCREMENT,
-  `LastName` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `FirstName` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Title` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `LastName` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FirstName` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Title` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ReportsTo` int(11) DEFAULT NULL,
   `BirthDate` datetime DEFAULT NULL,
   `HireDate` datetime DEFAULT NULL,
-  `Address` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `City` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `State` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Country` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `PostalCode` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Phone` varchar(24) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Fax` varchar(24) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `Email` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Address` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `City` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `State` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Country` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PostalCode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Phone` varchar(24) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Fax` varchar(24) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`EmployeeId`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,12 +144,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `genre`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `genre` (
   `GenreId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Name` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`GenreId`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,19 +168,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `invoice`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `invoice` (
   `InvoiceId` int(11) NOT NULL AUTO_INCREMENT,
   `CustomerId` int(11) NOT NULL,
   `InvoiceDate` datetime NOT NULL,
-  `BillingAddress` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `BillingCity` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `BillingState` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `BillingCountry` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `BillingPostalCode` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `BillingAddress` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BillingCity` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BillingState` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BillingCountry` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BillingPostalCode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Total` decimal(10,2) NOT NULL,
   PRIMARY KEY (`InvoiceId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -199,7 +199,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `invoiceline`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `invoiceline` (
   `InvoiceLineId` int(11) NOT NULL AUTO_INCREMENT,
   `InvoiceId` int(11) NOT NULL,
@@ -207,7 +207,7 @@ CREATE TABLE `invoiceline` (
   `UnitPrice` decimal(10,2) NOT NULL,
   `Quantity` int(11) NOT NULL,
   PRIMARY KEY (`InvoiceLineId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,12 +226,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `mediatype`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `mediatype` (
   `MediaTypeId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Name` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`MediaTypeId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -250,12 +250,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `playlist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `playlist` (
   `PlaylistId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Name` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`PlaylistId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -274,12 +274,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `playlisttrack`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `playlisttrack` (
   `PlaylistId` int(11) NOT NULL AUTO_INCREMENT,
   `TrackId` int(11) NOT NULL,
   PRIMARY KEY (`PlaylistId`,`TrackId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -298,19 +298,19 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `track`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `track` (
   `TrackId` int(11) NOT NULL AUTO_INCREMENT,
-  `Name` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `Name` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `AlbumId` int(11) DEFAULT NULL,
   `MediaTypeId` int(11) NOT NULL,
   `GenreId` int(11) DEFAULT NULL,
-  `Composer` varchar(220) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `Composer` varchar(220) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Milliseconds` int(11) NOT NULL,
   `Bytes` int(11) DEFAULT NULL,
   `UnitPrice` decimal(10,2) NOT NULL,
   PRIMARY KEY (`TrackId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -330,7 +330,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `vw_albumsales`;
 /*!50001 DROP VIEW IF EXISTS `vw_albumsales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_albumsales` AS SELECT 
  1 AS `Title`,
  1 AS `Name`,
@@ -348,7 +348,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_alltimesales`;
 /*!50001 DROP VIEW IF EXISTS `vw_alltimesales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_alltimesales` AS SELECT 
  1 AS `Quantity`,
  1 AS `UnitPrice`,
@@ -364,7 +364,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_artist_sales`;
 /*!50001 DROP VIEW IF EXISTS `vw_artist_sales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_artist_sales` AS SELECT 
  1 AS `Artist_Group`,
  1 AS `Total Sales`*/;
@@ -377,7 +377,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_artist_track_sales`;
 /*!50001 DROP VIEW IF EXISTS `vw_artist_track_sales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_artist_track_sales` AS SELECT 
  1 AS `Name`,
  1 AS `TrackName`,
@@ -391,7 +391,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_artist_unit_sales`;
 /*!50001 DROP VIEW IF EXISTS `vw_artist_unit_sales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_artist_unit_sales` AS SELECT 
  1 AS `Artist`,
  1 AS `Unit Sales`*/;
@@ -404,7 +404,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_customer_count`;
 /*!50001 DROP VIEW IF EXISTS `vw_customer_count`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_customer_count` AS SELECT 
  1 AS `Customer_Count`*/;
 SET character_set_client = @saved_cs_client;
@@ -416,7 +416,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_genre_count`;
 /*!50001 DROP VIEW IF EXISTS `vw_genre_count`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_genre_count` AS SELECT 
  1 AS `Genre`,
  1 AS `Count`*/;
@@ -429,7 +429,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_genre_count_no_sales`;
 /*!50001 DROP VIEW IF EXISTS `vw_genre_count_no_sales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_genre_count_no_sales` AS SELECT 
  1 AS `Genre`,
  1 AS `Count`*/;
@@ -442,7 +442,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_genresales`;
 /*!50001 DROP VIEW IF EXISTS `vw_genresales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_genresales` AS SELECT 
  1 AS `Name`,
  1 AS `Units Sold`,
@@ -456,7 +456,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_largest_customer_sales`;
 /*!50001 DROP VIEW IF EXISTS `vw_largest_customer_sales`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_largest_customer_sales` AS SELECT 
  1 AS `TotalSales`*/;
 SET character_set_client = @saved_cs_client;
@@ -468,7 +468,7 @@ SET character_set_client = @saved_cs_client;
 DROP TABLE IF EXISTS `vw_sales_by_month`;
 /*!50001 DROP VIEW IF EXISTS `vw_sales_by_month`*/;
 SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
+SET character_set_client = utf8mb4;
 /*!50001 CREATE VIEW `vw_sales_by_month` AS SELECT 
  1 AS `SaleMonth`,
  1 AS `Sum_Total`*/;
@@ -485,9 +485,9 @@ SET character_set_client = @saved_cs_client;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
@@ -515,9 +515,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_albumsales` AS select `album`.`Title` AS `Title`,`track`.`Name` AS `Name`,`invoiceline`.`Quantity` AS `Quantity`,`customer`.`Country` AS `Country`,`invoice`.`BillingCity` AS `BillingCity`,`invoiceline`.`UnitPrice` AS `UnitPrice`,`invoice`.`Total` AS `Total` from ((((`album` join `track` on((`album`.`AlbumId` = `track`.`AlbumId`))) join `invoiceline` on((`track`.`TrackId` = `invoiceline`.`TrackId`))) join `invoice` on((`invoiceline`.`InvoiceId` = `invoice`.`InvoiceId`))) join `customer` on((`customer`.`CustomerId` = `invoice`.`CustomerId`))) group by `album`.`Title`,`track`.`Name`,`invoiceline`.`Quantity`,`invoice`.`InvoiceDate`,`customer`.`Country`,`invoice`.`BillingCity`,`invoiceline`.`UnitPrice`,`invoice`.`Total` */;
@@ -533,9 +533,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_alltimesales` AS select `invoiceline`.`Quantity` AS `Quantity`,`invoiceline`.`UnitPrice` AS `UnitPrice`,`track`.`Name` AS `Name`,count(`track`.`TrackId`) AS `Count_TrackId`,`invoice`.`InvoiceDate` AS `InvoiceDate` from ((`invoiceline` join `track` on((`invoiceline`.`TrackId` = `track`.`TrackId`))) join `invoice` on((`invoiceline`.`InvoiceId` = `invoice`.`InvoiceId`))) group by `invoiceline`.`Quantity`,`invoiceline`.`UnitPrice`,`track`.`Name`,`invoice`.`InvoiceDate` order by `invoiceline`.`Quantity` desc */;
@@ -551,9 +551,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_artist_sales` AS select `artist`.`Name` AS `Artist_Group`,sum(`invoiceline`.`UnitPrice`) AS `Total Sales` from ((((`invoice` join `invoiceline` on((`invoiceline`.`InvoiceId` = `invoice`.`InvoiceId`))) join `track` on((`invoiceline`.`TrackId` = `track`.`TrackId`))) join `album` on((`track`.`AlbumId` = `album`.`AlbumId`))) join `artist` on((`album`.`ArtistId` = `artist`.`ArtistId`))) group by `artist`.`Name` order by `Total Sales` desc limit 25 */;
@@ -569,9 +569,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_artist_track_sales` AS select `artist`.`Name` AS `Name`,`track`.`Name` AS `TrackName`,sum(`invoiceline`.`Quantity`) AS `Units Sold` from (((`artist` join `album` on((`album`.`ArtistId` = `artist`.`ArtistId`))) join `track` on((`track`.`AlbumId` = `album`.`AlbumId`))) join `invoiceline` on((`invoiceline`.`TrackId` = `track`.`TrackId`))) group by `artist`.`Name`,`track`.`Name` order by `Units Sold` desc */;
@@ -587,9 +587,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_artist_unit_sales` AS select `artist`.`Name` AS `Artist`,sum(`invoiceline`.`Quantity`) AS `Unit Sales` from ((((`invoice` join `invoiceline` on((`invoiceline`.`InvoiceId` = `invoice`.`InvoiceId`))) join `track` on((`invoiceline`.`TrackId` = `track`.`TrackId`))) join `album` on((`track`.`AlbumId` = `album`.`AlbumId`))) join `artist` on((`album`.`ArtistId` = `artist`.`ArtistId`))) group by `artist`.`Name` order by `artist`.`Name` */;
@@ -605,9 +605,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_customer_count` AS select count(`customer`.`CustomerId`) AS `Customer_Count` from `customer` */;
@@ -623,9 +623,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_genre_count` AS select `genre`.`Name` AS `Genre`,count(`genre`.`Name`) AS `Count` from (`genre` join `track` on((`track`.`GenreId` = `genre`.`GenreId`))) group by `genre`.`Name` */;
@@ -641,9 +641,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_genre_count_no_sales` AS select `genre`.`Name` AS `Genre`,count(`genre`.`Name`) AS `Count` from ((`genre` join `track` on((`track`.`GenreId` = `genre`.`GenreId`))) left join `invoiceline` on((`invoiceline`.`TrackId` = `track`.`TrackId`))) where (`invoiceline`.`InvoiceLineId` is null) group by `genre`.`Name`,`invoiceline`.`InvoiceLineId` */;
@@ -659,9 +659,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_genresales` AS select `genre`.`Name` AS `Name`,sum(`invoiceline`.`Quantity`) AS `Units Sold`,date_format(`invoice`.`InvoiceDate`,'%Y %m 01') AS `SaleMonth` from (((`genre` join `track` on((`track`.`GenreId` = `genre`.`GenreId`))) join `invoiceline` on((`invoiceline`.`TrackId` = `track`.`TrackId`))) join `invoice` on((`invoiceline`.`InvoiceId` = `invoice`.`InvoiceId`))) group by `genre`.`Name`,`SaleMonth` order by `SaleMonth` */;
@@ -677,9 +677,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_largest_customer_sales` AS select sum(`invoice`.`Total`) AS `TotalSales` from `invoice` group by `invoice`.`CustomerId` order by `TotalSales` desc limit 1 */;
@@ -695,9 +695,9 @@ DELIMITER ;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8 */;
-/*!50001 SET character_set_results     = utf8 */;
-/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_unicode_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 
 /*!50001 VIEW `vw_sales_by_month` AS select (`invoice`.`InvoiceDate` - interval (dayofmonth(`invoice`.`InvoiceDate`) - 1) day) AS `SaleMonth`,sum(`invoice`.`Total`) AS `Sum_Total` from ((`invoiceline` join `track` on((`invoiceline`.`TrackId` = `track`.`TrackId`))) join `invoice` on((`invoiceline`.`InvoiceId` = `invoice`.`InvoiceId`))) group by (`invoice`.`InvoiceDate` - interval (dayofmonth(`invoice`.`InvoiceDate`) - 1) day) order by `SaleMonth` */;

@@ -1,6 +1,6 @@
-ALTER DATABASE `ms_access_migration`  CHARACTER SET utf8 COLLATE = utf8_unicode_ci ;
+ALTER DATABASE `ms_access_migration`  CHARACTER SET utf8mb4 COLLATE = utf8mb4_unicode_ci ;
 
-SELECT CONCAT("ALTER TABLE ", TABLE_SCHEMA, '.', TABLE_NAME," CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci ;") AS    ExecuteTheString
+SELECT CONCAT("ALTER TABLE ", TABLE_SCHEMA, '.', TABLE_NAME," CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;") AS    ExecuteTheString
 FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_SCHEMA="ms_access_migration"
 AND TABLE_TYPE="BASE TABLE";
