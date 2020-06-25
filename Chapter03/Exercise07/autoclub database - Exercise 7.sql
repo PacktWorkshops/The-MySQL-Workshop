@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `autoclub` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE  IF NOT EXISTS `autoclub` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `autoclub`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
@@ -46,7 +46,7 @@ CREATE TABLE `clubevents` (
   CONSTRAINT `FK_ClubEvents_EventVenue_End` FOREIGN KEY (`VenuEnd`) REFERENCES `eventvenues` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_ClubEvents_EventVenue_Start` FOREIGN KEY (`VenueStart`) REFERENCES `eventvenues` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Clubevents_EventType` FOREIGN KEY (`EventType`) REFERENCES `eventtype` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `eventmemberregistration` (
   KEY `FK_EventReg_ClubEvents` (`ClubEventID`),
   CONSTRAINT `FK_EventReg_ClubEvents` FOREIGN KEY (`ClubEventID`) REFERENCES `clubevents` (`ID`),
   CONSTRAINT `FK_EventReg_Members` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +107,7 @@ CREATE TABLE `eventtype` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `EventType` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `eventvenues` (
   UNIQUE KEY `Idx_VenueName` (`VenueName`),
   KEY `FK_EventVenue_States_idx` (`VenueState`),
   CONSTRAINT `FK_EventVenue_States` FOREIGN KEY (`VenueState`) REFERENCES `states` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -178,7 +178,7 @@ CREATE TABLE `identification` (
   KEY `FK_IdentificationMember_idx` (`MemberID`),
   CONSTRAINT `FK_Identification_IdentificationType` FOREIGN KEY (`IDType`) REFERENCES `identificationtype` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Identification_Members` FOREIGN KEY (`MemberID`) REFERENCES `members` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,7 +201,7 @@ CREATE TABLE `identificationtype` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `identificationtype` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,7 +225,7 @@ CREATE TABLE `make` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Make` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,11 +248,11 @@ DROP TABLE IF EXISTS `memberaddress`;
 CREATE TABLE `memberaddress` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `MemberID` int(11) NOT NULL,
-  `StreetAddress1` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8_unicode_ci NOT NULL,
-  `StreetAddress2` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `Town` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8_unicode_ci NOT NULL,
+  `StreetAddress1` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `StreetAddress2` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `Town` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `State` int(11) NOT NULL,
-  `Postcode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8_unicode_ci NOT NULL,
+  `Postcode` varchar(10) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
@@ -296,7 +296,7 @@ CREATE TABLE `members` (
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
   KEY `Surname` (`Surname`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -348,7 +348,7 @@ CREATE TABLE `states` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `State` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -378,7 +378,7 @@ CREATE TABLE `user` (
   `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `idx_username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -434,7 +434,7 @@ CREATE TABLE `vehicle` (
   CONSTRAINT `FK_Vehicle_VehicleUse` FOREIGN KEY (`Use`) REFERENCES `vehicleuse` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Vehicle_VehicleVariant` FOREIGN KEY (`Variant`) REFERENCES `vehiclevariant` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FK_Vehicle_Years` FOREIGN KEY (`Year`) REFERENCES `years` (`Year`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -458,7 +458,7 @@ CREATE TABLE `vehiclemodel` (
   `MakeID` int(11) DEFAULT NULL,
   `Model` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=591 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=591 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -482,7 +482,7 @@ CREATE TABLE `vehicleshape` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Shape` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -506,7 +506,7 @@ CREATE TABLE `vehicleuse` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Use` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -531,7 +531,7 @@ CREATE TABLE `vehiclevariant` (
   `ModelID` int(11) DEFAULT NULL,
   `Variant` varchar(75) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=1252 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1252 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -554,7 +554,7 @@ DROP TABLE IF EXISTS `years`;
 CREATE TABLE `years` (
   `Year` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`Year`)
-) ENGINE=InnoDB AUTO_INCREMENT=2026 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2026 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -579,7 +579,7 @@ CREATE TABLE `lookups` (
   `Value` varchar(255) NOT NULL,
   `Descriptions` varchar(255) NOT NULL,
   PRIMARY KEY (`Key`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 

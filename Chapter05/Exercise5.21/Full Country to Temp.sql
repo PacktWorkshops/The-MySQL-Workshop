@@ -45,14 +45,14 @@ ADD CONSTRAINT `ContinentID`
 
 DROP TABLE IF EXISTS `temp`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!50503 SET character_set_client = utf8 */;
 CREATE TABLE `temp` (
   `CountryID` int(11) NOT NULL AUTO_INCREMENT,
   `Country Code` varchar(5) DEFAULT NULL,
   `Country Name` varchar(50) DEFAULT NULL,
   `ContinentID` int(11) DEFAULT NULL,
   PRIMARY KEY (`CountryID`)
-) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
