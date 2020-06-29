@@ -2,7 +2,7 @@
 
 //Include modules for http and mysqlconnection
 var http = require('http');
-var mysqlconnection = require("./mysqlconnection.js");
+var mysqlconnection = require("../mysqlconnection.js");
 var numeral = require('numeral');
 
 //We want to use the world_statistics database

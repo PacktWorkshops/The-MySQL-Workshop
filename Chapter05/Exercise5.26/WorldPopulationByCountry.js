@@ -1,6 +1,6 @@
 // WorldPopulationByCountry.js
 
-var mysqlconnection = require("./mysqlconnection.js");
+var mysqlconnection = require("../mysqlconnection.js");
 mysqlconnection.query("USE world_statistics");
 
 

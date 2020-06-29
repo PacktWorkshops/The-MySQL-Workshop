@@ -1,5 +1,5 @@
 // Add the MySQL connection
-var mysqlconnection = require("./mysqlconnection.js");
+var mysqlconnection = require("../mysqlconnection.js");
 
 // Instruct server that all operations from this point are to use the world_statistics database
  mysqlconnection.query("USE world_statistics", function (err, result) {

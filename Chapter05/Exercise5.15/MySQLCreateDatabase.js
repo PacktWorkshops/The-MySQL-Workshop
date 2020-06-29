@@ -4,7 +4,7 @@
 //Bring in the mysqlconnection module, sure save time...
 //and if the server or user account changes later, no need to worry about it here
 //as long asthey are updated in the mysqlconnection.js module
-var mysqlconnection = require("./mysqlconnection.js");
+var mysqlconnection = require("../mysqlconnection.js");
 
 //You can issue commands to the server via an SQL statement
 //Here we are issuing a server command to create a new database
