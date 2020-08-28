@@ -1,7 +1,4 @@
 USE test;
---disable_warnings
-DROP TABLE IF EXISTS furniture;
---enable_warnings
 
 CREATE TABLE furniture (
   id INT PRIMARY KEY,
