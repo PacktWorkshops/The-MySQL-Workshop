@@ -1,9 +1,5 @@
 USE world;
 
---disable_warnings
-DROP TABLE IF EXISTS city_export;
---enable_warnings
-
 CREATE TABLE city_export LIKE city;
 SHOW CREATE TABLE city_export;
 

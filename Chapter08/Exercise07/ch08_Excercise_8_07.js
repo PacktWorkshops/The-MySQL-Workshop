@@ -1,5 +1,4 @@
 \use test
-db.dropCollection('countries');
 db.createCollection('countries');
 db.countries.add({"code": "FR", "name": "France"});
 db.countries.add({"code": "DE", "name": "Germany"});
