@@ -1,7 +1,4 @@
 USE test;
---disable_warnings
-DROP TABLE IF EXISTS months;
---enable_warnings
 
 CREATE TABLE months (
   month_number tinyint unsigned primary key,

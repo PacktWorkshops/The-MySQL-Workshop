@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS test;
+CREATE DATABASE test;
 
 use test;
 
