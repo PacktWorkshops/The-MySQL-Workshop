@@ -1,9 +1,5 @@
 USE world;
 
---disable_warnings
-DROP TABLE IF EXISTS city_export_california;
---enable_warnings
-
 CREATE TABLE city_export_california LIKE city;
 
 ALTER TABLE city_export_california
@@ -22,4 +18,3 @@ WHERE
   CountryCode='USA'
   AND District='California';
 
-DROP TABLE city_export_california;

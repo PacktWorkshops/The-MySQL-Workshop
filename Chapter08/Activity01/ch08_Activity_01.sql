@@ -1,7 +1,4 @@
 USE test;
---disable_warnings
-DROP TABLE IF EXISTS airports;
---enable_warnings
 
 CREATE TABLE airports (
   iata_code CHAR(3) PRIMARY KEY,
@@ -21,4 +18,3 @@ SELECT * FROM airports;
 
 SELECT * FROM airports ORDER BY passengers DESC;
 
-DROP TABLE IF EXISTS airports;
