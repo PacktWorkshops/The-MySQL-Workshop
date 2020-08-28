@@ -1,8 +1,6 @@
-USE test;
+CREATE DATABASE IF NOT EXISTS test;
 
---disable_warnings
-DROP TABLE IF EXISTS animals;
---enable_warnings
+use test;
 
 CREATE TABLE animals ( id int primary key, name varchar(255) );
 

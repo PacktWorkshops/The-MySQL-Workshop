@@ -1,4 +1,0 @@
-{"Field":"id","Type":"int(11)","Null":"NO","Key":"PRI","Default":null,"Extra":""}
-{"Field":"name","Type":"varchar(255)","Null":"YES","Key":"","Default":null,"Extra":""}
-{"id":1,"name":"Cheetah"}
-{"id":2,"name":"Leopard"}
