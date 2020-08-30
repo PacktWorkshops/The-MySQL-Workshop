@@ -1,6 +1,6 @@
 USE world;
 
-SELECT * FROM city ORDER BY Population LIMIT 1;
+SELECT Name, Population FROM city ORDER BY Population LIMIT 1;
 
 SELECT Code FROM country WHERE name='India';
 SELECT * FROM countrylanguage WHERE CountryCode='IND';
