@@ -8,9 +8,9 @@ DELIMITER //
 CREATE PROCEDURE spCountryList() 
 BEGIN
 
-	SELECT DISTINCT Country.`Country Code`, Country.`Country Name`
-	FROM Country 
-	ORDER BY Country.`Country Name`;
+	SELECT DISTINCT country.`Country Code`, country.`Country Name`
+	FROM country 
+	ORDER BY country.`Country Name`;
 
 END//
 

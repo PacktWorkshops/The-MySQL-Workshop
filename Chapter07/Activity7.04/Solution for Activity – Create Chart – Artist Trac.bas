@@ -18,7 +18,7 @@ Private Sub ArtistTrackSales(ByVal pArtist As String)
                 'Prepare the SQL
                 SQL = ""
                 SQL = SQL & "SELECT  TrackName, `Units Sold` "
-                SQL = SQL & "FROM vw_Artist_Track_Sales "
+                SQL = SQL & "FROM vw_artist_track_sales "
                 SQL = SQL & "WHERE Name = '" & pArtist & "' "
                 SQL = SQL & "ORDER BY `Units Sold` DESC"
                 
