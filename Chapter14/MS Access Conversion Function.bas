@@ -628,7 +628,7 @@ On Error GoTo Err_LogError
     End If
     
     '12. Put them all together in a single SQL string
-    UpdateString = "INSERT ErrorLog(" & updatefields & ") VALUES(" & UpdateString & ")"
+    UpdateString = "INSERT errorlog(" & updatefields & ") VALUES(" & UpdateString & ")"
     
 LogMySQL:
     '13. Increment LogAttempt

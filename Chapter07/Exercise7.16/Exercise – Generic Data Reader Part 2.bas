@@ -13,5 +13,5 @@
 
 '3.	Finally, pass in a query to find the maximum InvoiceDate from the invoice table and place the returned value in N12
 
-    Worksheets("Dashboard").Cells(12, 14) = runSQL_SingleResult("SELECT MAX(InvoiceDate) FROM Invoice")
+    Worksheets("Dashboard").Cells(12, 14) = runSQL_SingleResult("SELECT MAX(InvoiceDate) FROM invoice")
 
