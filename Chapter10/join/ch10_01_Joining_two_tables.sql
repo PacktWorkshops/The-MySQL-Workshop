@@ -1,4 +1,3 @@
-DROP DATABASE world_simple;
 CREATE DATABASE world_simple;
 USE world_simple;
 
