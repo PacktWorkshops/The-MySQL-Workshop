@@ -1,6 +1,0 @@
-{"name":"HP LaserJet 1012","warranty_until":2021}
-{"name":"Epson WorkForce WF-2835DWF","warranty_until":2023}
-{"name":" Brother DCP-J774DW","warranty_until":2023}
-{"_id":1,"name":"HP LaserJet 1012","location":"Building 1, First floor","warranty_until":2021}
-{"_id":2,"name":"Epson WorkForce WF-2835DWF","location":"Building 2, First floor","warranty_until":2023}
-{"_id":4,"name":" Brother DCP-J774DW","location":"Building 1, Fourth floor","warranty_until":2023}

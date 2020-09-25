@@ -1,0 +1,17 @@
+{
+   "query_block": {
+     "select_id": 1,
+     "cost_info": {
+       "query_cost": "1.00"
+     },
+     "nested_loop": [
+       {
+         "table": {
+           "table_name": "ci",
+           "access_type": "const",
+           "possible_keys": [
+             "PRIMARY"
+           ],
+	}
+	]
+}
