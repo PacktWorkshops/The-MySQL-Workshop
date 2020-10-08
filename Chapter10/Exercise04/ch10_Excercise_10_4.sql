@@ -32,6 +32,3 @@ JOIN countrylanguage cl ON cl.CountryCode=ci.CountryCode
 WHERE
   ci.Name='San Francisco'
   AND cl.Percentage>1;
-
-ALTER TABLE country DROP INDEX Name;
-ALTER TABLE city DROP INDEX Name;
