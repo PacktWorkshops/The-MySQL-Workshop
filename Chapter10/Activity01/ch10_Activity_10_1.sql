@@ -28,4 +28,4 @@ FROM customer cu
 JOIN address a ON cu.address_id=a.address_id
 JOIN city ci ON ci.city_id=a.city_id
 JOIN country co ON co.country_id=ci.country_id
-WHERE country='Turkmenistan';
+WHERE country='Turkmenistan'\G
