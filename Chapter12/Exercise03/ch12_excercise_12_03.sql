@@ -18,7 +18,7 @@ GRANT ALL ON mobileapp.* TO 'appdeveloper';
 CREATE USER 'linda'@'%' IDENTIFIED BY 'AkFernyeisjegs' DEFAULT ROLE manager;
 CREATE USER 'john'@'%' IDENTIFIED BY 'owvurewJatkinyegod' DEFAULT ROLE manager;
 CREATE USER 'vladimir'@'%' IDENTIFIED BY 'rusvawfyoaw' DEFAULT ROLE appdeveloper;
-CREATE USER 'jack'@'%' IDENTIFIED BY 'joigowInladdIc6' DEFAULT ROLE webdeveloper;
+CREATE USER 'victoria'@'%' IDENTIFIED BY 'joigowInladdIc6' DEFAULT ROLE webdeveloper;
 
 GRANT manager, webdeveloper, appdeveloper TO 'patrick'@'%';
 ALTER USER 'patrick'@'%' DEFAULT ROLE manager;
