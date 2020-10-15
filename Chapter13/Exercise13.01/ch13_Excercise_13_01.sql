@@ -1,7 +1,3 @@
---disable_warnings
-DROP SCHEMA IF EXISTS coffeeprefs;
---enable_warnings
-
 CREATE SCHEMA coffeeprefs;
 USE coffeeprefs;
 

@@ -1,0 +1,1 @@
+mysqldump -u root -p --single-transaction --no-data coffeeprefs > "C:\Temp\coffeeprefs.sql"
