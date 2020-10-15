@@ -1,9 +1,5 @@
 USE world;
 
---disable_warnings
-ALTER TABLE country DROP COLUMN population_outside_of_city;
---enable_warnings
-
 ALTER TABLE country
   ADD COLUMN population_outside_of_city INT;
 
@@ -22,5 +18,6 @@ FROM country WHERE population_outside_of_city<0;
 SELECT SUM(Population) FROM city WHERE CountryCode='SGP';
 
 UPDATE country SET population_outside_of_city=0 WHERE population_outside_of_city<0;
+
 SELECT Code, Name, Population, population_outside_of_city
 FROM country WHERE population_outside_of_city<0;

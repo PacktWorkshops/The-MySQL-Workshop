@@ -1,6 +1,5 @@
 \use test
 
-db.dropCollection('todo')
 db.createCollection('todo')
 db.todo.add({
   "_id": 1,

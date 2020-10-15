@@ -1,11 +1,5 @@
 USE world;
 
---disable_warnings
-UPDATE city SET CountryCode='SDN' WHERE Name='Juba';
-DELETE FROM countrylanguage WHERE CountryCode='SSD';
-DELETE FROM country WHERE Code='SSD';
---enable_warnings
-
 INSERT INTO country
 (Code, Name, Continent, Region, SurfaceArea, IndepYear,
 Population, GNP, GovernmentForm, HeadOfState,
