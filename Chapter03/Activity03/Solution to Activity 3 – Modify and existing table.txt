@@ -1,3 +1,0 @@
-ALTER TABLE `clubevents`
-ADD CONSTRAINT `FK_Clubevents_EventType`
-FOREIGN KEY (`EventType`) REFERENCES `EventType`(`ID`);

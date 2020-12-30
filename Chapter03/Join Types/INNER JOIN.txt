@@ -1,7 +1,0 @@
-SELECT
-  table1.ID AS FromTable1,
-  table2.ID AS FromTable2
-FROM
-  table1
-  INNER JOIN table2 ON table2.ID = table1.ID
-ORDER BY FromTable1

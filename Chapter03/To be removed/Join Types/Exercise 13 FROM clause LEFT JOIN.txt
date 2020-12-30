@@ -1,0 +1,7 @@
+FROM
+  members
+  LEFT JOIN memberaddress ON memberaddress.MemberID = members.ID
+  LEFT JOIN states ON memberaddress.State = states.ID
+  LEFT JOIN identification ON identification.MemberID = members.ID
+  LEFT JOIN identificationtype ON identification.IDType = identificationtype.ID
+  LEFT JOIN states states1 ON states1.ID = identification.StateOfIssue
