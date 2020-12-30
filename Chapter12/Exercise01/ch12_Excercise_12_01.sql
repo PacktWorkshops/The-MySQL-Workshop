@@ -1,9 +1,5 @@
 USE world;
 
-SELECT Name, LifeExpectancy FROM country WHERE Region='Eastern Europe';
+DESCRIBE countrylanguage;
 
-SELECT Name, LifeExpectancy FROM country WHERE Region='Eastern Europe'
-INTO OUTFILE '/var/lib/mysql-files/eastern_europe_life_expectancy.csv'
-CHARACTER SET utf8mb4
-FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"';
-
+SELECT Language FROM countrylanguage LIMIT 5;
