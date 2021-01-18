@@ -1,0 +1,26 @@
+Customer Purchases 18/1/2021,,,
+--------------------------------------------------------------------------------------------------,,,
+Customer,Date_Time,SKU, Quantity
+--------------------------------------------------------------------------------------------------,,,
+Big Company,01-JAN-2020 09:10am,SKU001,3
+Big Company,01-JAN-2020 09:10am,SKU001,3
+Big Company,01-JAN-2020 09:12am,SKU002,2
+Big Company,01-JAN-2020 09:12am,SKU002,2
+Big Company,11-MAR-2020 14:41am,SKU001,3
+Big Company,12-MAR-2020 16:12am,SKU001,2
+,Total Purchases for Big Company,,15
+,,,
+,,,
+Little Company,01-JAN-2020 09:10am,SKU001,3
+,Total Purchases for Little Company,,3
+,,,
+,,,
+New Company,02-FEB-2020 09:32am,SKU003,2
+New Company,05-FEB-2020 08:00am,SKU004,3
+New Company,10-MAR-2020 12:12am,SKU003,2
+,Total Purchases for New Company,,7
+,,,
+,,,
+Old Company,02-FEB-2020 11:10am,SKU004,3
+Old Company,02-JAN-2020 10:12am,SKU002,2
+,Total Purchases for Old Company,,3

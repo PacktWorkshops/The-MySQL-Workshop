@@ -1,6 +1,17 @@
 
 
 var mysqlconnection = require("./mysqlconnection.js");
+		var sql = "CREATE TABLE `MOTdatabase`.`Customers` ("
+		sql = sql + "  `CustID` int(11) NOT NULL AUTO_INCREMENT, "
+		sql = sql + "  `CustomerName` varchar(50) NOT NULL, "
+		sql = sql + "  PRIMARY KEY (`CustID`)"
+		sql = sql + ");"
+		
+		 mysqlconnection.query(sql, function (err) {
+      		if (err) throw "Problem creating the Table:- " + err.code;	
+      		console.log("Table created"); 	
+});
+
 		var sql = "CREATE TABLE `MOTdatabase`.`CustomerPurchases` ("
 		sql = sql + "  `CPID` int(11) NOT NULL AUTO_INCREMENT, "
 		sql = sql + "  `CustID` int(11) NOT NULL, "
