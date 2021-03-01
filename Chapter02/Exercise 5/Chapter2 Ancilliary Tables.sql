@@ -1,3 +1,12 @@
+ALTER TABLE `autoclub`.`memberaddress` 
+ADD CONSTRAINT `MemberID`
+  FOREIGN KEY (`MemberID`)
+  REFERENCES `autoclub`.`members` (`idMembers`)
+  ON DELETE RESTRICT
+  ON UPDATE NO ACTION;
+
+
+
 USE `autoclub`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
