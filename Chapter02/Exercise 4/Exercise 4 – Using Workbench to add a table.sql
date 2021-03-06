@@ -1,3 +1,8 @@
+ALTER TABLE `autoclub`.`members` 
+ADD INDEX `FirstName` (`FirstName` ASC) VISIBLE;
+;
+
+
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
 -- Host: 192.168.0.3    Database: chapter2
