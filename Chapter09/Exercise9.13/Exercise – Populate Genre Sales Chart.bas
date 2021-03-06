@@ -35,7 +35,7 @@ Private Sub Worksheet_Change(ByVal Target As Range)
 
         Case Else
             'Nothing to work with so leave
-            GoTo Leavesub
+            Exit Sub
     End Select
     
 Leavesub:

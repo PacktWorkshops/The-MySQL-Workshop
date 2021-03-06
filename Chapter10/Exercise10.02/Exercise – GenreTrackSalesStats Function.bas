@@ -45,7 +45,7 @@ Public Function GenreTrackSalesStats() As Boolean
             Set RS = Nothing
             Msg = "There is no data"
             MsgBox Msg, vbOKOnly + vbInformation, "No data to display"
-            GoTo LeaveFunction
+            Exit Function
 
 '7.	Else if we have, process it, start by setting the column headings. We are placing the data in columns H, I and J
 

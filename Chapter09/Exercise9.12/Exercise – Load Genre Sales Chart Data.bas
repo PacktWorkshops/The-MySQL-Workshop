@@ -43,7 +43,7 @@ On Error GoTo HandleError
                 'Test there are records.
                 If RS.EOF And RS.BOF Then
                     'No data
-                    GoTo Leavesub
+                    Exit Sub
                 Else
 
 '10.	We load the data into the “Data Sheet” starting at row 2, column 5

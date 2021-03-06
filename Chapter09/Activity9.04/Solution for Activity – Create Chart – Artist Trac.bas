@@ -31,7 +31,7 @@ Private Sub ArtistTrackSales(ByVal pArtist As String)
                 'Test there are records.
                 If RS.EOF And RS.BOF Then
                     'No data
-                    GoTo Leavesub
+                    Exit Sub
                 Else
                     'We have data so load it
                     Worksheets("Data Sheet").Cells(2, 12).CopyFromRecordset RS

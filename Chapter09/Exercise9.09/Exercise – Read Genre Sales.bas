@@ -70,7 +70,7 @@ Public Function ReadGenreSales () as Boolean
             'tell user and then leave the function
             Msg = "There is no data"
             MsgBox Msg, vbOKOnly + vbInformation, "No data to display"
-            GoTo leavefunction
+            Exit Function
 
 '10.	If we get into this part the record test, happy days, we have data so we need to process it
 
@@ -120,7 +120,7 @@ Public Function ReadGenreSales () as Boolean
         'Connection failed if gets in here, just drop through to leave
         'The connection routine will have displayed a message so nothing to do but leave
        ReadGenreSales = False
-       GoTo leavefunction
+       Exit Function
     End If
 
 '17.	And leave the function

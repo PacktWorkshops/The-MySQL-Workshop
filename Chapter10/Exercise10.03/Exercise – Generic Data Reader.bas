@@ -32,7 +32,7 @@ Public Function runSQL_SingleResult(SQL As String) As Variant
             Msg = "There is no data"
             MsgBox Msg, vbOKOnly + vbInformation, "No data to display"
             runSQL_SingleResult = 0
-            GoTo LeaveFunction
+            Exit Function
 
 '6.	If there was a record returned, set the position to the first record and read the value and pass it back by assigning it to the function. Because this function accepts an SQL, we have no idea what the 'fields name maybe, as we expect only one single value to be returned, we can simply read the first (and only) fields value by referring to it using its numeric value of zero
 

@@ -45,7 +45,7 @@ Public Function ReadArtistSales() As Boolean
             'tell user and then leave the function
             Msg = "There is no data"
             MsgBox Msg, vbOKOnly + vbInformation, "No data to display"
-            GoTo LeaveFunction
+            Exit Function
         
 '6.	Start processing the recordset if there are records, beginning with the headings. The starting column has changed to 3 “C” 
 
