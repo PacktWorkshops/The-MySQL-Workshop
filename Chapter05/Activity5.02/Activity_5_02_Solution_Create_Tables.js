@@ -1,25 +1,25 @@
 
 
 var mysqlconnection = require("./mysqlconnection.js");
-		var sql = "CREATE TABLE `MOTdatabase`.`Customers` ("
-		sql = sql + "  `CustID` int(11) NOT NULL AUTO_INCREMENT, "
-		sql = sql + "  `CustomerName` varchar(50) NOT NULL, "
-		sql = sql + "  PRIMARY KEY (`CustID`)"
-		sql = sql + ");"
+		var sql = "CREATE TABLE `MOTdatabase`.`Customers` (\
+		`CustID` int(11) NOT NULL AUTO_INCREMENT, \
+		`CustomerName` varchar(50) NOT NULL, \
+		PRIMARY KEY (`CustID`)\
+		);"
 		
 		 mysqlconnection.query(sql, function (err) {
       		if (err) throw "Problem creating the Table:- " + err.code;	
       		console.log("Table created"); 	
 });
 
-		var sql = "CREATE TABLE `MOTdatabase`.`CustomerPurchases` ("
-		sql = sql + "  `CPID` int(11) NOT NULL AUTO_INCREMENT, "
-		sql = sql + "  `CustID` int(11) NOT NULL, "
-		sql = sql + "  `SKU` varchar(20) NOT NULL, "
-		sql = sql + "  `SaleDateTime` varchar(25) NOT NULL, "
-		sql = sql + "  `Quantity` int(11) NOT NULL, "
-		sql = sql + "  PRIMARY KEY (`CPID`)"
-		sql = sql + ");"
+		var sql = "CREATE TABLE `MOTdatabase`.`CustomerPurchases` (\
+		`CPID` int(11) NOT NULL AUTO_INCREMENT, \
+		`CustID` int(11) NOT NULL, \
+		`SKU` varchar(20) NOT NULL, \
+		`SaleDateTime` varchar(25) NOT NULL, \
+		`Quantity` int(11) NOT NULL, \
+		PRIMARY KEY (`CPID`)\
+		);"
 		
 		 mysqlconnection.query(sql, function (err) {
       		if (err) throw "Problem creating the Table:- " + err.code;	

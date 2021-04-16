@@ -6,11 +6,11 @@ var mysqlconnection = require("../mysqlconnection.js");
 //Issue a server command to create the table. The command also defines the fields and their data type
 //The ID field is also designated as the prinary key, it is an integer and will auto increment its value
 //as each recor is inserted into the table
-var sql = "CREATE TABLE `world_statistics`.`continents` ("
-sql = sql + "  `ContinentID` int(11) NOT NULL AUTO_INCREMENT, "
-sql = sql + "  `Continent` varchar(13) DEFAULT NULL, "
-sql = sql + "  PRIMARY KEY (`ContinentID`)"
-sql = sql + ");"
+var sql = "CREATE TABLE `world_statistics`.`continents` (\
+  `ContinentID` int(11) NOT NULL AUTO_INCREMENT, \
+ `Continent` varchar(13) DEFAULT NULL, \
+ PRIMARY KEY (`ContinentID`)\
+);"
 
 
 //Execute the SQL, in clude error checking
