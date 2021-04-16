@@ -10,9 +10,6 @@ var stream = fs.createWriteStream("HelloWorld.txt");
 stream.write("Hello World\n");	// the \n forces a new line
 stream.write("Disk File\n");
 
-//Output the date serial to the file
-stream.write(Date.now() + "\n");
-
 //Ends the stream and closes the file
   stream.end();
   
