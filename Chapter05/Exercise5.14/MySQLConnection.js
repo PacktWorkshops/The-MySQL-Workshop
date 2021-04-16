@@ -23,12 +23,13 @@ password: "<Password>"
 mysqlconnection.connect(function(err) {	
 
 	//Test for an error and provide a suitable message and the code if one occurs
-  if (err) throw "mysqlconnection.js problem connecting to MySQL, the ERROR CODE is :-" + err.code;			  
-
+  if (err){
+	  throw err;			  
+  }else{
   //No error so report to the console that connection was successful
   //This can be omitted
   console.log("Connected to MySQL!"); 	
-  
+  }
   
   //Close off the connection blocks bracketing
   });
