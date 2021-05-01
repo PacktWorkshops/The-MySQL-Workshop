@@ -1,2 +1,2 @@
 //Output the text to the CLI console
-console.log("Hello World - Console");
+console.log(3+4);
