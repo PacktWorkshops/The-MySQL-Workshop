@@ -1,8 +1,10 @@
+//Verified
+
 var mysqlconnection = require("./mysqlconnection.js");
-var sql = "CREATE TABLE `MOTdatabase`.`Customers` (
-  `CustID` int(11) NOT NULL AUTO_INCREMENT, 
-  `CustomerName` varchar(50) NOT NULL, 
-  PRIMARY KEY (`CustID`)
+var sql = "CREATE TABLE `MOTdatabase`.`Customers` ( \
+  `CustID` int(11) NOT NULL AUTO_INCREMENT, \
+  `CustomerName` varchar(50) NOT NULL, \
+  PRIMARY KEY (`CustID`)\
 );"
 
 mysqlconnection.query(sql, function (err) {
@@ -10,13 +12,13 @@ mysqlconnection.query(sql, function (err) {
   console.log("Table created");
 });
 
-var sql = "CREATE TABLE `MOTdatabase`.`CustomerPurchases` (
-  `CPID` int(11) NOT NULL AUTO_INCREMENT, 
-  `CustID` int(11) NOT NULL, 
-  `SKU` varchar(20) NOT NULL, 
-  `SaleDateTime` varchar(25) NOT NULL,
-  `Quantity` int(11) NOT NULL,
-  PRIMARY KEY (`CPID`)
+var sql = "CREATE TABLE `MOTdatabase`.`CustomerPurchases` (\
+  `CPID` int(11) NOT NULL AUTO_INCREMENT, \
+  `CustID` int(11) NOT NULL, \
+  `SKU` varchar(20) NOT NULL, \
+  `SaleDateTime` varchar(25) NOT NULL, \
+  `Quantity` int(11) NOT NULL, \
+  PRIMARY KEY (`CPID`) \
 );"
 
 mysqlconnection.query(sql, function (err) {

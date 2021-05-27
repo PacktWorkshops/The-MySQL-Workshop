@@ -1,3 +1,4 @@
+//Verified
 var mysqlconnection = require("./mysqlconnection.js");
 
 mysqlconnection.query("CREATE DATABASE `MOTdatabase`", 

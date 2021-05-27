@@ -1,3 +1,4 @@
+//Verified
 //This is the final incarnation of the mysqlconnection script
 //it is now a module that can be reused.
 //By setting this connection script up as a module, you only need to

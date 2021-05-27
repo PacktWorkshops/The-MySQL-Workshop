@@ -1,3 +1,4 @@
+//Verified
 //This script uses the mysqlconnection as a module so does not require the connection details 
 //for the database, these are included when the module is required
 
