@@ -10,5 +10,4 @@ var stream = fs.createWriteStream("Log.txt");
 stream.write("Application Started Successfully!\n");	// the \n forces a new line
 
 //Ends the stream and closes the file
-  stream.end();
-  
+stream.end(); 
