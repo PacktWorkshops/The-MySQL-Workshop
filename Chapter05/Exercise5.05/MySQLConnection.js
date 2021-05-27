@@ -22,18 +22,18 @@ password: "<Password>"
 //Make the connection, include error checking
 mysqlconnection.connect(function(err) {	
 
-	//Test for an error and provide a suitable message and the code if one occurs
+  //Test for an error and provide a suitable message and the code if one occurs
   if (err){
-	  throw err;			  
+    throw err;			  
   }else{
-	  //No error so report to the console that connection was successful
-	  //This can be omitted
-	  console.log("Connected to MySQL!"); 	
+  //No error so report to the console that connection was successful
+ //This can be omitted
+    console.log("Connected to MySQL!"); 	
   }
-   process.exit();  
+  process.exit();  
   
   //Close off the connection blocks bracketing
-  });
+});
 
 //End the Connection Block
 
