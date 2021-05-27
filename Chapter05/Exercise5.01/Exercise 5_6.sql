@@ -1,1 +1,0 @@
-SELECT * FROM import_test.country WHERE `Country Code`="AUS";

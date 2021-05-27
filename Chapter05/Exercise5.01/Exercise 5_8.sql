@@ -1,1 +1,0 @@
-DELETE FROM import_test.country WHERE `Country Code`="AUS";
