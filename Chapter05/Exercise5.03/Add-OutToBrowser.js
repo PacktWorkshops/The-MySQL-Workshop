@@ -11,5 +11,4 @@ http.createServer(function (req, res) {
   res.end(result.toString());
 
   //Close off the server bracketing and instruct server to list to port 82 for requests
-  }).listen(82); 
-  
+}).listen(82);
