@@ -30,7 +30,7 @@ mysqlconnection.connect(function(err) {
  //This can be omitted
     console.log("Connected to MySQL!"); 	
   }
-  process.exit();  
+process.exit();  
   
   //Close off the connection blocks bracketing
 });
