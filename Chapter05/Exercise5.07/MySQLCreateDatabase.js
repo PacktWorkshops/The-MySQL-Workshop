@@ -9,16 +9,18 @@ var mysqlconnection = require("../mysqlconnection.js");
 //You can issue commands to the server via an SQL statement
 //Here we are issuing a server command to create a new database
 //We are including error checking
-mysqlconnection.query("CREATE DATABASE `world_statistics`", function (err) {
+mysqlconnection.query("CREATE DATABASE `world_statistics`", 
+  function (err) {
 
-		//If there was and error, tell the user, along with the error code
-     	if (err) throw "Problem creating the database:- " + err.code;
+    //If there was and error, tell the user, along with the error code
+    if (err) throw "Problem creating the database:- " + 
+      err.code;
 
-     		//No error, tell user the database was created		
-	    	console.log("Database created"); 
+    //No error, tell user the database was created		
+    console.log("Database created"); 
 
-	    	//And leave the script
-			process.exit();										  	
+    //And leave the script
+    process.exit();										  	
 
 //Closing off the bracketing
 });	           
