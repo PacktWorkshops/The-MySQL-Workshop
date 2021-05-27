@@ -1,17 +1,30 @@
 //This script inserts a single record into the new database table
 //You guessed it, include the connection module
-var mysqlconnection = require("../mysqlconnection.js");
+var mysqlconnection = require("./MySQLConnection.js");
 
 //Create a query to insert the data
 //Notice we need to include the database name with the table,  world_statistics.continents
 //This is because we did not specify a database in the connection, we"ll get to this soon enough
 //
 
+var sql = "CREATE TABLE world_statistics.Region1(CountryID INT, `Country Code` VARCHAR(45));";
+
+mysqlconnection.query(sql, function (err, result) {
+
+    if (err) throw "Problem inserting the data" + err. code;
+
+    console.log(result);													
+    console.log("Number of rows affected : " + result.affectedRows);
+	console.log("New records ID : " + result.insertId);  	
+
+});
+
+
 //Create the SQL to extract the data from the source table, temp
-var records = "SELECT `Country Code`, `Country Name`, `ContinentID` FROM world_statistics.temp WHERE `CountryID` < 10 ORDER BY `CountryID`";
+var records = "SELECT  `ContinentID`, `Country Code` FROM world_statistics.country WHERE `CountryID` < 10 ORDER BY `CountryID`";
 
 //Create the insert query but only with field names, no VALUES statement
-var sql = "INSERT INTO world_statistics.country (`Country Code`,`Country Name`,`ContinentID`)";
+var sql = "INSERT INTO world_statistics.Region1 (`CountryID`, `Country Code`)";
 
 //Combine the two SQL statements with a space between them
 sql = sql + " " + records; 
