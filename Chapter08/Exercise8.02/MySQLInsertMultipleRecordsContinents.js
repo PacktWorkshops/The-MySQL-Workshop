@@ -1,16 +1,26 @@
 //This script inserts a single record into the new database table
 //You guessed it, include the connection module
-var mysqlconnection = require("./mysqlconnection.js");
+var mysqlconnection = require("MySQLConnection.js");
 
 //Create a query to insert the data
 //Notice we need to include the database name with the table,  world_statistics.continents
 //This is because we did not specify a database in the connection, we'll get to this soon enough
 //
 //Also notice the question mark, also important
-var sql = "INSERT INTO world_statistics.continents (continent) VALUES ?";
+var sql = "CREATE TABLE `world_statistics`.`userContinents` (\
+`ContinentID` int(11) NOT NULL AUTO_INCREMENT, \
+`Continent` varchar(13) DEFAULT NULL, \
+PRIMARY KEY(`ContinentID`)\
+);";
+mysqlconnection.query(sql,function(err) {
+	if (err) throw "Problem creating the table:- " + err.code;
+	console.log("Table created");
+});
+
+var sql = "INSERT INTO world_statistics.userContinents (continent) VALUES ?";
 
 //Create a record object, this is an array of data to insert into the table. We are creating a single dimension here
-var record = [['Asia'],['Europe'],['North America'],['Oceania'],['South America'],['Antarctica']];
+var record = [['Asia'],['Europe'],['North America'],['Oceania'];
 
 
 //Now we execute the SQL statement

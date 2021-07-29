@@ -1,5 +1,5 @@
 // :) Just do it
-var mysqlconnection = require("../mysqlconnection.js");
+var mysqlconnection = require("MySQLConnection.js");
 
 //Instruct server to use world_statistics
 mysqlconnection.query("USE world_statistics", function (err) {
