@@ -1,1 +1,0 @@
-create database com_line_test;

@@ -1,1 +1,0 @@
-INSERT INTO `users` (`UserName`) values ('Tom Pettit');
