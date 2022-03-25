@@ -1,0 +1,7 @@
+    UPDATE `members` 
+    SET  
+		active  = 1,
+		InactiveDate = NULL,    
+		Signature = LOAD_File('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Fred Bloggs_Signature.JPG'),  
+		Photo = LOAD_File('C:\\ProgramData\\MySQL\\MySQL Server 8.0\\Uploads\\Fred Bloggs_Photo.JPG')
+    WHERE   `ID`=1;

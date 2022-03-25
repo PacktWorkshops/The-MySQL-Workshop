@@ -1,0 +1,6 @@
+UPDATE members 
+SET 
+    active = 0,
+    InactiveDate = CURRENT_DATE()
+WHERE
+    ID=1;
