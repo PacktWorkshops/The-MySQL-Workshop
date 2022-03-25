@@ -1,6 +1,0 @@
-SELECT `FirstName`,`Surname`,
-
-CONCAT((SELECT `Value` FROM `lookups` WHERE `Key`="ImageRepository") , `PhotoPath`) AS FullPhotoPath,
-CONCAT((SELECT `Value` FROM `lookups` WHERE `Key`="ImageRepository") , `SigPath`) AS FullSignaturePath
-
-FROM `members` WHERE `members`.`ID`=1

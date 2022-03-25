@@ -1,5 +1,0 @@
-UPDATE `members` 
-SET  
-SigPath = "Members\\Signatures\\MemberSignature_1.jpg",  
-PhotoPath = "Members\\Photos\\MemberPhoto_1.jpg"
-WHERE   `ID`=1;

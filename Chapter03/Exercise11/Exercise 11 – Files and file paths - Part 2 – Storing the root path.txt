@@ -1,6 +1,0 @@
-INSERT INTO lookups 
-(`Key`,`Value`,`Descriptions`)
-SELECT
-"ImageRepository", 
-"D:\\FileRepository\\", 
-"Automobile Club images";
