@@ -1,1 +1,1 @@
-CREATE SCHEMA `chapter3_exercise2`;
+CREATE SCHEMA `shoporder`;
