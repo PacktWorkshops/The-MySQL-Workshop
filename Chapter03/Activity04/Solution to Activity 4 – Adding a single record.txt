@@ -1,1 +1,0 @@
-INSERT INTO members (`Surname`,`FirstName`,`MiddleNames`,`DOB`,`JoinDate`)    SELECT "Pettit","Thomas","William","1960/10/15","2020/01/20";

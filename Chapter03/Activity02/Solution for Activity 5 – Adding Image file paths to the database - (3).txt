@@ -1,0 +1,4 @@
+UPDATE `members` 
+SET  
+PhotoPath = "Members\\Photos\\MemberPhoto_2.jpg"
+WHERE   `ID`=2;

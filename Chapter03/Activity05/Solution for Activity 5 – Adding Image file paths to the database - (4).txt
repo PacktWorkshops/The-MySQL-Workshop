@@ -1,2 +1,0 @@
-SELECT CONCAT((SELECT `Value` FROM `lookups` WHERE `Key`="ImageRepository") , `PhotoPath`) AS FullPhotoPath
-FROM `members` WHERE `members`.`ID`=2
