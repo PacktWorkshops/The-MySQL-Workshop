@@ -1,12 +1,3 @@
-ALTER TABLE `autoclub`.`memberaddress` 
-ADD CONSTRAINT `MemberID`
-  FOREIGN KEY (`MemberID`)
-  REFERENCES `autoclub`.`members` (`idMembers`)
-  ON DELETE RESTRICT
-  ON UPDATE NO ACTION;
-
-
-
 USE `autoclub`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
@@ -199,6 +190,20 @@ CREATE TABLE `years` (
   `Year` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+DROP TABLE IF EXISTS `memberaddress`
+
+CREATE TABLE `memberaddress`(
+  `ID` INT(11),
+  `MemberID` INT(11),
+  `StreetAddress1` VARCHAR(50),
+  `StreetAddress2` VARCHAR(50),
+  `Town` VARCHAR(50),
+  `State` VARCHAR(10),
+  `Postcode` VARCHAR(10),
+  `WhenAdded` TIMESTAMP,
+  `LastModified` TIMESTAMP
+ );
 
 --
 -- Dumping data for table `years`
