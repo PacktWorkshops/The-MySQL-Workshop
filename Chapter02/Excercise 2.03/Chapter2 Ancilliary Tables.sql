@@ -3,7 +3,7 @@ USE `autoclub`;
 --
 -- Host: 192.168.0.3    Database: autoclub
 -- ------------------------------------------------------
--- Server version	8.0.17
+-- Server version 8.0.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -15,6 +15,7 @@ USE `autoclub`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
 
 --
 -- Table structure for table `identificationtype`
@@ -223,5 +224,101 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+--
+-- Table structure for table `members`
+--
+
+DROP TABLE IF EXISTS `members`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+
+CREATE TABLE `members` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Surname` varchar(50) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `MiddleNames` varchar(50) NOT NULL,
+  `DOB` date NOT NULL,
+  `Signature` blob NOT NULL,
+  `Photo` blob NOT NULL,
+  `Active` bit(1) NOT NULL DEFAULT b'1',
+  `JoinDate` date NOT NULL,
+  `InactiveDate` date DEFAULT NULL,
+  `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  KEY `Surname` (`Surname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+--
+-- Table structure for table `identification`
+--
+
+DROP TABLE IF EXISTS `identification`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+
+CREATE TABLE `identification` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `MemberID` int NOT NULL,
+  `IDType` int NOT NULL,
+  `StateOfIssue` int NOT NULL,
+  `IDNumber` varchar(15) NOT NULL,
+  `ExpiryDate` date NOT NULL,
+  `Class` varchar(10) DEFAULT NULL,
+  `Conditions` varchar(50) DEFAULT NULL,
+  `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `IdentificationNumber` (`IDType`,`IDNumber`),
+  KEY `FK_Member_idx` (`MemberID`),
+  KEY `FK_IdentificationMember_idx` (`MemberID`)
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+--
+-- Table structure for table `vehicle`
+--
+
+DROP TABLE IF EXISTS `vehicle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+
+CREATE TABLE `vehicle` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `MemberID` int NOT NULL,
+  `RegoExpires` date NOT NULL,
+  `RegNumb` varchar(10) NOT NULL,
+  `Use` int NOT NULL,
+  `Year` int NOT NULL,
+  `Make` int NOT NULL,
+  `Model` int NOT NULL,
+  `Variant` int NOT NULL,
+  `Shape` int NOT NULL,
+  `EngCap` double NOT NULL,
+  `VIN` varchar(17) DEFAULT NULL,
+  `Tare` int DEFAULT NULL,
+  `GVM` int DEFAULT NULL,
+  `GCM` int DEFAULT NULL,
+  `Passengers` int NOT NULL,
+  `EngNumb` varchar(12) NOT NULL,
+  `AxleCode` varchar(10) DEFAULT NULL,
+  `Conditions` varchar(50) DEFAULT NULL,
+  `WhenAdded` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `LastModified` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`ID`),
+  KEY `FK_Vehicle_VehicleUse_idx` (`Use`),
+  KEY `FK_Vehicle_Years_idx` (`Year`),
+  KEY `FK_Vehicle_Make_idx` (`Make`),
+  KEY `FK_Vehicle_VehicleModel_idx` (`Model`),
+  KEY `FK_Vehicle_VehicleVariant_idx` (`Variant`),
+  KEY `FK_Vehicle_VehicleShape_idx` (`Shape`),
+  KEY `FK_Vehicle_Members_idx` (`MemberID`)
+  
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 -- Dump completed on 2020-01-12 17:38:45
